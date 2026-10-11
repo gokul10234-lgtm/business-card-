@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap">
 <style>
 :root{--bg:#f3f6fb;--card:#fff;--ink:#0f1b3d;--mut:#5b6b85;--line:#dbe3ef;--acc:#1f2f8a;--acc2:#0a8a6a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--card:#151e33;--ink:#eaf0fb;--mut:#95a3bd;--line:#27334d;--acc:#2f3fb0;--acc2:#12a07c}}
 :root[data-theme="dark"]{--bg:#0b1220;--card:#151e33;--ink:#eaf0fb;--mut:#95a3bd;--line:#27334d;--acc:#2f3fb0;--acc2:#12a07c}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
@@ -59,21 +59,6 @@ table.cmp{width:100%;border-collapse:collapse;font-size:13px;background:var(--ca
 #pop div{max-width:440px;margin:0 auto;background:var(--ink);color:var(--bg);border-radius:18px;padding:16px;display:flex;align-items:center;gap:12px}
 #pop a{color:var(--bg);font-weight:600;font-size:18px;text-decoration:none;flex:1}
 #pop button{background:none;border:0;color:var(--bg);font-size:22px;cursor:pointer}
-.qrc{background:#fff;padding:6px;border-radius:10px;line-height:0;flex:0 0 auto}
-.qrc img{display:block}
-.fab{position:fixed;inset-inline-end:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:54px;height:54px;border-radius:50%;border:0;background:var(--acc2);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:6;box-shadow:0 4px 14px rgba(0,0,0,.25)}
-.chatp{position:fixed;left:10px;right:10px;max-width:420px;margin:0 auto;bottom:calc(10px + env(safe-area-inset-bottom,0px));height:min(70vh,520px);background:var(--card);border:1px solid var(--line);border-radius:18px;z-index:7;display:flex;flex-direction:column;box-shadow:0 8px 30px rgba(0,0,0,.3);overflow:hidden}
-.ch{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--acc);color:#fff}
-.ch button{background:none;border:0;color:#fff;font-size:24px;cursor:pointer}
-.cm{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
-.mb{max-width:85%;padding:8px 12px;border-radius:14px;font-size:14px;background:var(--bg);color:var(--ink);align-self:flex-start;white-space:pre-wrap}
-.mb.u{align-self:flex-end;background:var(--acc2);color:#fff}
-.cq{display:flex;gap:6px;overflow-x:auto;padding:0 12px 8px}
-.cq .chip{white-space:nowrap;font-size:13px}
-.cin{display:flex;gap:8px;padding:8px 12px;border-top:1px solid var(--line)}
-.cin input{margin:0;flex:1}
-.cin .btn{flex:0 0 auto;padding:8px 14px}
-.cw{display:block;text-align:center;padding:9px;font-size:13px;font-weight:600;color:var(--acc2);text-decoration:none;border-top:1px solid var(--line)}
 #corner{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));inset-inline-end:12px;display:flex;gap:6px;z-index:7}
 .cb{min-width:36px;height:36px;padding:0 10px;border-radius:18px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.12)}
 .own{text-align:center;margin:28px 0 8px}
@@ -85,15 +70,12 @@ table.cmp{width:100%;border-collapse:collapse;font-size:13px;background:var(--ca
 <div id="pop"></div>
 <div id="toast" class="toast"></div>
 <div id="corner"></div>
-<div id="chat"></div>
-<script id="data" type="application/json">{"name":"Gokul","title":"Credit card advisor","tag":"UAE · All major banks","phone":"+971527074559","wa":"+971527074559","url":"","delay":8,"t":{"cards":true,"banks":true,"elig":true,"wa":true,"popup":true,"offers":true,"compare":true,"calc":true,"share":true,"ar":true},"offers":["Free for life on selected cards this month","Apply today, approval in 24 hours"],"cards":[{"n":"Cashback Plus","cat":"Cashback","d":"Up to 5% back on groceries","fee":"Free for life","cb":5,"min":5000},{"n":"Miles Elite","cat":"Travel","d":"Miles on every spend plus lounge access","fee":"AED 0 first year","cb":1.5,"min":10000},{"n":"Lifestyle Rewards","cat":"Lifestyle","d":"Dining and entertainment offers","fee":"Free for life","cb":2,"min":8000}],"banks":["CBD","Emirates NBD","ADCB","FAB","Mashreq","RAKBANK"]}</script>
+<script id="data" type="application/json">{"name":"Gokul","title":"Credit card advisor","tag":"UAE · All major banks","phone":"+971527074559","wa":"+971527074559","url":"https://claude.ai/artifact/SuwGFKFkuL5Xw2D2hrRBN9","delay":8,"t":{"cards":true,"banks":true,"elig":true,"wa":true,"popup":true,"offers":true,"compare":true,"calc":true,"share":true,"ar":true},"offers":["Free for life on selected cards this month","Apply today, approval in 24 hours"],"cards":[{"n":"Cashback Plus","cat":"Cashback","d":"Up to 5% back on groceries","fee":"Free for life","cb":5,"min":5000},{"n":"Miles Elite","cat":"Travel","d":"Miles on every spend plus lounge access","fee":"AED 0 first year","cb":1.5,"min":10000},{"n":"Lifestyle Rewards","cat":"Lifestyle","d":"Dining and entertainment offers","fee":"Free for life","cb":2,"min":8000}],"banks":["CBD","Emirates NBD","ADCB","FAB","Mashreq","RAKBANK"]}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 var D=JSON.parse(document.getElementById('data').textContent);
-if(!(window.claude&&window.claude.use)){try{var _o=JSON.parse(localStorage.getItem('gd')||'null');if(_o&&_o.cards)D=_o}catch(e){}}
-D.t=Object.assign({offers:true,compare:true,calc:true,share:true,ar:true,refer:true,theme:true,chat:true},D.t);
+D.t=Object.assign({offers:true,compare:true,calc:true,share:true,ar:true,refer:true,theme:true},D.t);
 D.offers=D.offers||[];D.url=D.url||'';
-function PU(){var u=D.url||(location.origin+location.pathname);return(/claude/i.test(u)||!/^https?:/i.test(u))?'':u}
 D.refMsg=D.refMsg||('Hi! I found a great credit card advisor, '+D.name+'. Check your eligibility and offers here:');
 var $=function(s){return document.querySelector(s)};
 var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
@@ -111,7 +93,7 @@ function toast(m){var t=$('#toast');t.textContent=m;t.style.display='block';clea
 function shell(){
   document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
   $('#app').innerHTML='<div class="wrap"><div id="ban"></div><div id="cc"></div><div class="hint">'+T('flip')+'</div><div class="row" id="act"></div><div class="tools" id="tools"></div><div id="qrw"></div><div id="cards"></div><div id="cmp"></div><div id="calc"></div><div id="banks"></div><div id="elig"></div><div id="ref"></div><div class="own" id="own"></div></div>';
-  ban();card();acts();tools();chatRender();cardsSec();cmpSec();calcSec();banksSec();eligSec();refSec();ownBtn();
+  ban();card();acts();tools();cardsSec();cmpSec();calcSec();banksSec();eligSec();refSec();ownBtn();
 }
 function ban(){
   clearInterval(bt);var el=$('#ban');
@@ -121,10 +103,9 @@ function ban(){
 }
 function card(){
   var h=flip
-   ?'<div><small>'+T('contact')+'</small></div><div style="display:flex;align-items:flex-end;justify-content:space-between;gap:10px"><div><h1 dir="ltr">'+esc(D.phone)+'</h1><small>'+T('tapc')+'</small></div></div>'
-   :'<div><small>'+esc(D.title)+'</small></div><div style="display:flex;align-items:flex-end;justify-content:space-between;gap:10px"><div><h1>'+esc(D.name)+'</h1><small>'+esc(D.tag)+'</small></div>'+(window.QRCode?'<div id="cqr" class="qrc"></div>':'')+'</div>';
+   ?'<div><small>'+T('contact')+'</small></div><div><h1 dir="ltr">'+esc(D.phone)+'</h1><small>'+T('tapc')+'</small></div>'
+   :'<div><small>'+esc(D.title)+'</small></div><div><h1>'+esc(D.name)+'</h1><small>'+esc(D.tag)+'</small></div>';
   $('#cc').innerHTML='<div class="cc" onclick="flip=!flip;card()">'+GFX+h+'</div>';
-  if(window.QRCode&&$('#cqr')){try{new QRCode($('#cqr'),{text:PU()||('tel:'+D.phone),width:76,height:76})}catch(e){}}
 }
 function acts(){
   var h='<a class="btn" href="tel:'+esc(D.phone)+'">'+T('call')+'</a>';
@@ -137,7 +118,7 @@ function tools(){
   if(D.t.share){h+='<button class="btn" onclick="shareP()">'+T('share')+'</button>';if(window.QRCode)h+='<button class="btn" onclick="qr()">'+T('qr')+'</button>'}
   $('#tools').innerHTML=h;
   var k='';
-  if(D.t.theme)k+='<button class="cb" aria-label="'+(curTh()==='dark'?T('light'):T('dark'))+'" onclick="thTap()">'+(curTh()==='dark'?SUN:MOON)+'</button>';
+  if(D.t.theme)k+='<button class="cb" aria-label="'+(curTh()==='dark'?T('light'):T('dark'))+'" onclick="setTh()">'+(curTh()==='dark'?SUN:MOON)+'</button>';
   if(D.t.ar)k+='<button class="cb" onclick="setL()">'+(lang==='ar'?'EN':'العربية')+'</button>';
   $('#corner').innerHTML=k;
 }
@@ -148,137 +129,12 @@ function refSec(){
 }
 function sendRef(a){
   var n=$('#rn').value.trim(),m=$('#rm').value.replace(/\D/g,'');
-  a.href='https://wa.me/'+m+'?text='+encodeURIComponent((n?T('hi')+' '+n+'! ':'')+D.refMsg+(PU()?' '+PU():''));
+  a.href='https://wa.me/'+m+'?text='+encodeURIComponent((n?T('hi')+' '+n+'! ':'')+D.refMsg+' '+D.url);
   return true;
-}
-var chatOpen=false,chatMsgs=[],CQ=[];
-function L(a,b){return lang==='ar'?b:a}
-var CHATSVG='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>';
-function chatToggle(){chatOpen=!chatOpen;chatRender()}
-function intent(q){
-  q=q.toLowerCase();
-  var m=[['dbr',/dbr|debt|emi|loan|liabilit|calculat|eligib|نسبة الدين|قرض|التزام|أهلي|اهلي/],['cash',/cash|reward|best|استرداد|مكاف|أفضل|افضل/],['sal',/salar|income|eligib|qualif|minimum|راتب|دخل|أهلي|اهلي/],['fee',/fee|charge|free|annual|رسوم|مجان/],['docs',/doc|paper|emirates id|passport|statement|مستند|وثائق|اوراق|أوراق/],['banks',/bank|بنك/],['apply',/apply|how|start|تقدم|قدم|كيف/],['contact',/call|phone|number|contact|whatsapp|اتصال|رقم|تواصل|واتساب/]];
-  for(var i=0;i<m.length;i++)if(m[i][1].test(q))return m[i][0];
-  return '';
-}
-function ans(k){
-  var cs=D.cards,r;
-  if(k==='cash'){r=cs.filter(function(c){return c.cb}).sort(function(a,b){return b.cb-a.cb});return r.length?L('Top cashback: ','أعلى استرداد نقدي: ')+r.slice(0,3).map(function(c){return c.n+' ('+c.cb+'%)'}).join(', ')+'.':L('Message me on WhatsApp for current cashback offers.','راسلني عبر واتساب لمعرفة عروض الاسترداد الحالية.')}
-  if(k==='sal'){r=cs.filter(function(c){return c.min});return r.length?L('Minimum salary: ','الحد الأدنى للراتب: ')+r.map(function(c){return c.n+' (AED '+Number(c.min).toLocaleString('en')+')'}).join(', ')+'.':L('Salary requirements vary by bank. Message me to check yours.','تختلف متطلبات الراتب حسب البنك. راسلني للتحقق.')}
-  if(k==='fee'){r=cs.filter(function(c){return c.fee});return r.length?L('Annual fees: ','الرسوم السنوية: ')+r.map(function(c){return c.n+' ('+c.fee+')'}).join(', ')+'.':L('Fees vary by card. Message me for details.','تختلف الرسوم حسب البطاقة. راسلني للتفاصيل.')}
-  if(k==='docs')return L('Usually: Emirates ID, passport, latest salary certificate or payslip, and 3 months of bank statements. Requirements vary by bank.','عادةً: الهوية الإماراتية، جواز السفر، شهادة الراتب أو قسيمة الراتب، وكشف حساب لثلاثة أشهر. تختلف المتطلبات حسب البنك.');
-  if(k==='banks')return L('I work with: ','أتعامل مع: ')+D.banks.join(', ')+'.';
-  if(k==='apply')return L('Use "Find my best card" on this page, or message me on WhatsApp and I will guide you step by step.','استخدم "اعثر على أفضل بطاقة" في هذه الصفحة، أو راسلني عبر واتساب وسأرشدك خطوة بخطوة.');
-  if(k==='contact')return L('Call or WhatsApp me: ','اتصل أو راسلني عبر واتساب: ')+D.phone;
-  return '';
-}
-function addMsg(r,t){
-  chatMsgs.push({r:r,t:t});
-  var cm=$('#cm');if(!cm)return;
-  var d=document.createElement('div');d.className='mb'+(r==='u'?' u':'');d.textContent=t;cm.appendChild(d);cm.scrollTop=cm.scrollHeight;
-}
-function chatAsk(q,k){
-  addMsg('u',q);
-  if(dbrS.step>0&&!k){dbrStep(q);return}
-  dbrS={step:0,v:[]};
-  k=k||intent(q);
-  if(k==='dbr'){dbrS={step:1,v:[]};addMsg('b',L('Let us check your eligibility. What is your monthly salary (AED)?','لنتحقق من أهليتك. ما هو راتبك الشهري (درهم)؟'));return}
-  var a=ans(k);
-  addMsg('b',a||L('I am not sure about that. Message me on WhatsApp and I will answer personally.','لست متأكداً من ذلك. راسلني عبر واتساب وسأجيبك شخصياً.'));
-}
-var dbrS={step:0,v:[]};
-function num(s){s=String(s).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).replace(/[,\s]/g,'');var n=parseFloat(s);return isNaN(n)||n<0?null:n}
-function dbrStep(q){
-  var n=num(q);
-  if(n===null){addMsg('b',L('Please type a number, for example 15000.','اكتب رقماً، مثلاً 15000.'));return}
-  if(dbrS.step===1&&n<=0){addMsg('b',L('Salary must be more than 0. Type your monthly salary.','يجب أن يكون الراتب أكبر من صفر. اكتب راتبك الشهري.'));return}
-  dbrS.v.push(n);dbrS.step++;
-  if(dbrS.step===2){addMsg('b',L('Total monthly loan or EMI payments (AED)? Type 0 if none.','إجمالي أقساط القروض الشهرية (درهم)؟ اكتب 0 إن لم يوجد.'));return}
-  if(dbrS.step===3){addMsg('b',L('Total limit of your existing credit cards (AED)? Banks usually count about 5% of card limits as a monthly payment. Type 0 if none.','إجمالي حدود بطاقاتك الائتمانية الحالية (درهم)؟ تحتسب البنوك عادةً نحو 5% من الحد كالتزام شهري. اكتب 0 إن لم توجد.'));return}
-  var s=dbrS.v[0],liab=dbrS.v[1]+dbrS.v[2]*0.05,cap=+D.dbrMax||50,d=liab/s*100,room=s*cap/100-liab;
-  dbrS={step:0,v:[]};
-  var fmt=function(x){return Math.round(x).toLocaleString('en')};
-  var rec=D.cards.filter(function(c){return!c.min||c.min<=s}).map(function(c){return c.n});
-  var t=L('Your estimated DBR is ','نسبة الدين التقديرية لديك ')+d.toFixed(1)+'% ('+L('monthly payments','الالتزامات الشهرية')+' AED '+fmt(liab)+').\n';
-  if(d<=cap){
-    t+=L('This is within the usual '+cap+'% limit. You could add about AED '+fmt(room)+' per month in new payments.\n','هذه ضمن الحد المعتاد '+cap+'%. يمكنك إضافة نحو '+fmt(room)+' درهم شهرياً كالتزامات جديدة.\n');
-    t+=rec.length?L('Cards to consider for your salary: ','بطاقات مناسبة لراتبك: ')+rec.join(', ')+'.':L('No sample card matches this salary yet. Message me for options.','لا توجد بطاقة مطابقة لهذا الراتب حالياً. راسلني للخيارات.');
-  }else{
-    t+=L('This is above the usual '+cap+'% limit, so approval may be difficult. Message me and we can look at options.','هذه أعلى من الحد المعتاد '+cap+'% وقد يصعب الحصول على الموافقة. راسلني لنبحث الخيارات.');
-  }
-  t+=L('\nThis is an estimate. Each bank decides.','\nهذا تقدير فقط. القرار النهائي للبنك.');
-  addMsg('b',t);
-}
-function chatQ(i){chatAsk(CQ[i][1],CQ[i][0])}
-function chatSend(){var i=$('#ci'),q=i.value.trim();if(!q)return;i.value='';chatAsk(q)}
-function chatRender(){
-  var el=$('#chat');
-  if(D.t.chat===false){el.innerHTML='';return}
-  if(!chatOpen){el.innerHTML='<button class="fab" aria-label="Chat" onclick="chatToggle()">'+CHATSVG+'</button>';return}
-  if(!chatMsgs.length)chatMsgs.push({r:'b',t:L('Hi! I am the assistant for '+D.name+'. Ask me about cards, fees, salary or documents.','مرحباً! أنا مساعد '+D.name+'. اسألني عن البطاقات والرسوم والراتب والمستندات.')});
-  CQ=[['dbr',L('DBR check','فحص نسبة الدين')],['cash',L('Best cashback','أفضل استرداد')],['sal',L('Salary needed','الراتب المطلوب')],['fee',L('Fees','الرسوم')],['docs',L('Documents','المستندات')],['banks',L('Banks','البنوك')],['apply',L('How to apply','كيف أقدّم')]];
-  el.innerHTML='<div class="chatp"><div class="ch"><b>'+esc(L('Chat with '+D.name,'تحدث مع '+D.name))+'</b><button aria-label="Close" onclick="chatToggle()">×</button></div><div class="cm" id="cm"></div><div class="cq">'+CQ.map(function(x,i){return'<button class="chip" onclick="chatQ('+i+')">'+esc(x[1])+'</button>'}).join('')+'</div><div class="cin"><input id="ci" placeholder="'+L('Type your question','اكتب سؤالك')+'" onkeydown="if(event.key===\'Enter\')chatSend()"><button class="btn p" onclick="chatSend()">'+L('Send','إرسال')+'</button></div><a class="cw" target="_blank" rel="noopener" href="https://wa.me/'+waNum()+'">'+T('wa')+'</a></div>';
-  var cm=$('#cm');
-  chatMsgs.forEach(function(m){var d=document.createElement('div');d.className='mb'+(m.r==='u'?' u':'');d.textContent=m.t;cm.appendChild(d)});
-  cm.scrollTop=cm.scrollHeight;
-}
-var thN=0,thT=null;
-function thTap(){
-  setTh();
-  thN++;clearTimeout(thT);thT=setTimeout(function(){thN=0},1500);
-  if(thN>=5){thN=0;setTh();pwAsk()}
-}
-function pwAsk(){
-  $('#adm').innerHTML='<div class="wrap"><h2>Admin</h2><label>Password</label><input id="pwi" type="password" inputmode="numeric" autocomplete="off" onkeydown="if(event.key===\'Enter\')pwGo()"><div class="err" id="pwe"></div><div class="row"><button class="btn" onclick="closeAdm()">Cancel</button><button class="btn p" onclick="pwGo()">Open</button></div></div>';
-  $('#adm').className='open';
-  setTimeout(function(){var i=$('#pwi');if(i)i.focus()},50);
-}
-function pwGo(){
-  if($('#pwi').value===String(D.pw||'111'))openAdm();
-  else{$('#pwe').textContent='Wrong password.';$('#pwi').value=''}
-}
-function saveDev(){
-  var st=$('#st');
-  try{localStorage.setItem('gd',JSON.stringify(D));st.style.color='var(--mut)';st.textContent='Saved on this device only. Other visitors will not see it.'}
-  catch(e){st.style.color='#c0392b';st.textContent='Could not save on this device.'}
-}
-async function copyData(){
-  var st=$('#st');
-  try{await navigator.clipboard.writeText(JSON.stringify(D));st.style.color='var(--mut)';st.textContent='Copied. In GitHub, replace the data line inside script id=data with this text.'}
-  catch(e){st.style.color='#c0392b';st.textContent='Could not copy.'}
-}
-var GH={};try{GH=JSON.parse(localStorage.getItem('ghc')||'{}')}catch(e){}
-function ghAuto(){var h=location.hostname,p=location.pathname.split('/')[1]||'';return /\.github\.io$/i.test(h)?{o:h.split('.')[0],r:p}:{o:'',r:''}}
-function ghCfg(){var a=ghAuto();return{o:GH.o||a.o,r:GH.r||a.r,b:GH.b||'main',t:GH.t||''}}
-function ghSet(k,v){GH[k]=v.trim();try{localStorage.setItem('ghc',JSON.stringify(GH))}catch(e){}}
-function ghLoad(){
-  if(window.claude&&window.claude.use)return;
-  fetch('data.json?v='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){
-    if(j&&j.cards){
-      j.t=Object.assign({offers:true,compare:true,calc:true,share:true,ar:true,refer:true,theme:true,chat:true},j.t);
-      j.offers=j.offers||[];j.url=j.url||'';j.refMsg=j.refMsg||D.refMsg;
-      D=j;shell();showPop();
-    }
-  }).catch(function(){});
-}
-async function ghSave(){
-  var st=$('#st'),c=ghCfg();
-  if(!c.o||!c.r||!c.t){st.style.color='#c0392b';st.textContent='Fill in GitHub owner, repository and token first.';return}
-  st.style.color='var(--mut)';st.textContent='Saving to GitHub...';
-  var u='https://api.github.com/repos/'+c.o+'/'+c.r+'/contents/data.json',H={'Authorization':'Bearer '+c.t,'Accept':'application/vnd.github+json'};
-  try{
-    var sha,g=await fetch(u+'?ref='+encodeURIComponent(c.b),{headers:H});
-    if(g.ok){sha=(await g.json()).sha}else if(g.status!==404){throw new Error('read '+g.status)}
-    var body={message:'Update card data',content:btoa(unescape(encodeURIComponent(JSON.stringify(D,null,1)))),branch:c.b};
-    if(sha)body.sha=sha;
-    var p=await fetch(u,{method:'PUT',headers:H,body:JSON.stringify(body)});
-    if(!p.ok)throw new Error('write '+p.status);
-    st.textContent='Saved. The live page updates in about 1 to 2 minutes.';
-  }catch(e){st.style.color='#c0392b';st.textContent='Could not save to GitHub ('+((e&&e.message)||'error')+'). Check the token, owner, repository and branch.'}
 }
 function setL(){lang=lang==='ar'?'en':'ar';try{localStorage.setItem('lg',lang)}catch(e){}shell()}
 async function saveC(){
-  var v='BEGIN:VCARD\nVERSION:3.0\nFN:'+D.name+'\nTITLE:'+D.title+'\nTEL;TYPE=CELL:'+D.phone+'\n'+(PU()?'URL:'+PU()+'\n':'')+'END:VCARD';
+  var v='BEGIN:VCARD\nVERSION:3.0\nFN:'+D.name+'\nTITLE:'+D.title+'\nTEL;TYPE=CELL:'+D.phone+'\nURL:'+D.url+'\nEND:VCARD';
   try{
     var f=new File([v],D.name+'.vcf',{type:'text/vcard'});
     if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:D.name});return}
@@ -286,14 +142,14 @@ async function saveC(){
   try{await navigator.clipboard.writeText(D.name+' '+D.phone);toast(T('copied'))}catch(e){location.href='tel:'+D.phone}
 }
 async function shareP(){
-  if(navigator.share){try{await navigator.share(PU()?{title:D.name,url:PU()}:{title:D.name,text:D.name+' '+D.phone});return}catch(e){if(e&&e.name==='AbortError')return}}
-  try{await navigator.clipboard.writeText(PU()||D.phone);toast(PU()?T('link'):T('copied'))}catch(e){}
+  if(navigator.share){try{await navigator.share({title:D.name,url:D.url});return}catch(e){if(e&&e.name==='AbortError')return}}
+  try{await navigator.clipboard.writeText(D.url);toast(T('link'))}catch(e){}
 }
 function qr(){
   var w=$('#qrw');
   if(w.innerHTML){w.innerHTML='';return}
   w.innerHTML='<div id="qr"></div>';
-  new QRCode($('#qr'),{text:PU()||('tel:'+D.phone),width:200,height:200});
+  new QRCode($('#qr'),{text:D.url,width:200,height:200});
 }
 function cardsSec(){
   var el=$('#cards');
@@ -359,7 +215,7 @@ function showPop(){
 function openAdm(){admRender();$('#adm').className='open'}
 function closeAdm(){$('#adm').className='';sel=[];shell();showPop()}
 function admRender(){
-  var tl={cards:'Show cards',banks:'Show banks',elig:'Show eligibility check',wa:'Show WhatsApp button',popup:'Contact number popup',offers:'Offers banner',compare:'Card comparison',calc:'Cashback calculator',share:'Share and QR',ar:'Arabic toggle',refer:'Refer a friend',theme:'Light/dark toggle',chat:'Chat assistant'};
+  var tl={cards:'Show cards',banks:'Show banks',elig:'Show eligibility check',wa:'Show WhatsApp button',popup:'Contact number popup',offers:'Offers banner',compare:'Card comparison',calc:'Cashback calculator',share:'Share and QR',ar:'Arabic toggle',refer:'Refer a friend',theme:'Light/dark toggle'};
   var h='<div class="wrap"><h2>Admin panel</h2>';
   [['name','Name'],['title','Title'],['tag','Tagline'],['phone','Phone'],['wa','WhatsApp number'],['url','Page link (used for Share and QR)']].forEach(function(f){
     h+='<label>'+f[1]+'</label><input value="'+esc(D[f[0]])+'" onchange="D.'+f[0]+'=this.value">';
@@ -368,15 +224,13 @@ function admRender(){
   Object.keys(tl).forEach(function(k){
     h+='<div class="tg"><span>'+tl[k]+'</span><input type="checkbox"'+(D.t[k]?' checked':'')+' onchange="D.t.'+k+'=this.checked"></div>';
   });
-  h+='<label>Admin password (for the hidden theme-button entry)</label><input value="'+esc(D.pw||'111')+'" onchange="D.pw=this.value">';
-  h+='<label>DBR limit % used by the chat calculator</label><input type="number" value="'+esc(+D.dbrMax||50)+'" onchange="D.dbrMax=+this.value">';
   h+='<label>Refer a friend message (the page link is added automatically)</label><textarea rows="3" onchange="D.refMsg=this.value">'+esc(D.refMsg)+'</textarea><h2>Offers banner</h2><label>One offer per line</label><textarea rows="3" onchange="D.offers=this.value.split(\'\\n\').map(function(s){return s.trim()}).filter(Boolean)">'+esc(D.offers.join('\n'))+'</textarea><h2>Cards</h2>';
   D.cards.forEach(function(c,i){
     h+='<div class="crow"><input placeholder="Name" value="'+esc(c.n)+'" onchange="D.cards['+i+'].n=this.value"><input placeholder="Category" value="'+esc(c.cat)+'" onchange="D.cards['+i+'].cat=this.value"><input placeholder="Description" value="'+esc(c.d)+'" onchange="D.cards['+i+'].d=this.value"><input placeholder="Annual fee" value="'+esc(c.fee||'')+'" onchange="D.cards['+i+'].fee=this.value"><input type="number" step="0.1" placeholder="Cashback %" value="'+esc(c.cb||'')+'" onchange="D.cards['+i+'].cb=+this.value"><input type="number" placeholder="Min. salary (AED)" value="'+esc(c.min||'')+'" onchange="D.cards['+i+'].min=+this.value"><button class="chip" onclick="D.cards.splice('+i+',1);admRender()">Remove</button></div>';
   });
   h+='<button class="chip" onclick="D.cards.push({n:\'New card\',cat:\'General\',d:\'\',fee:\'\',cb:0,min:0});admRender()">Add card</button>';
   h+='<h2>Banks</h2><label>Separate with commas</label><textarea rows="3" onchange="D.banks=this.value.split(\',\').map(function(s){return s.trim()}).filter(Boolean)">'+esc(D.banks.join(', '))+'</textarea>';
-  h+='<h2>GitHub auto-update</h2><label>Owner (GitHub username)</label><input value="'+esc(ghCfg().o)+'" onchange="ghSet(\'o\',this.value)"><label>Repository name</label><input value="'+esc(ghCfg().r)+'" onchange="ghSet(\'r\',this.value)"><label>Branch</label><input value="'+esc(ghCfg().b)+'" onchange="ghSet(\'b\',this.value)"><label>Token (kept on this device only)</label><input type="password" autocomplete="off" value="'+esc(ghCfg().t)+'" onchange="ghSet(\'t\',this.value)"><div class="err" id="st"></div><div class="row"><button class="btn" onclick="closeAdm()">Close</button><button class="btn p" onclick="save()">Save and publish</button></div><div class="row"><button class="btn" onclick="saveDev()">Save on this device</button><button class="btn" onclick="copyData()">Copy data</button></div><div class="row"><button class="btn p" onclick="ghSave()">Save to GitHub (live for everyone)</button></div></div>';
+  h+='<div class="err" id="st"></div><div class="row"><button class="btn" onclick="closeAdm()">Close</button><button class="btn p" onclick="save()">Save and publish</button></div></div>';
   $('#adm').innerHTML=h;
 }
 async function save(){
@@ -386,7 +240,7 @@ async function save(){
     if(!a){st.style.color='#c0392b';st.textContent='Publishing is not available in this view.';return}
     var c=document.documentElement.cloneNode(true);
     c.removeAttribute('dir');c.removeAttribute('data-theme');c.setAttribute('lang','en');
-    ['#app','#adm','#pop','#toast','#corner','#chat'].forEach(function(s){var n=c.querySelector(s);n.innerHTML='';n.textContent='';n.removeAttribute('style');if(s!=='#toast')n.className=''});
+    ['#app','#adm','#pop','#toast','#corner'].forEach(function(s){var n=c.querySelector(s);n.innerHTML='';n.textContent='';n.removeAttribute('style');if(s!=='#toast')n.className=''});
     c.querySelector('#data').textContent=JSON.stringify(D).replace(/</g,'\\u003c');
     await a.publish('<!DOCTYPE html>\n'+c.outerHTML);
   }catch(e){
@@ -397,7 +251,6 @@ async function save(){
 
 if(D.t.theme){try{document.documentElement.setAttribute('data-theme',localStorage.getItem('th')||'light')}catch(e){document.documentElement.setAttribute('data-theme','light')}}
 shell();showPop();
-ghLoad();
 (async function(){
   try{
     if(!window.claude||!claude.use)return;
