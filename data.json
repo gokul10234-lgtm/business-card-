@@ -15,11 +15,11 @@
   "refer": true,
   "theme": true,
   "chat": true,
-  "cards": true,
+  "cards": false,
   "banks": true,
   "elig": true,
   "wa": true,
-  "popup": true
+  "popup": false
  },
  "offers": [
   "Free for life on selected cards this month",
