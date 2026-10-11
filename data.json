@@ -1,0 +1,63 @@
+{
+ "name": "Gokul",
+ "title": "Credit card advisor",
+ "tag": "UAE · All major banks",
+ "phone": "+971527074559",
+ "wa": "+971527074559",
+ "url": "",
+ "delay": 8,
+ "t": {
+  "offers": true,
+  "compare": true,
+  "calc": true,
+  "share": true,
+  "ar": true,
+  "refer": true,
+  "theme": true,
+  "chat": true,
+  "cards": true,
+  "banks": true,
+  "elig": true,
+  "wa": true,
+  "popup": true
+ },
+ "offers": [
+  "Free for life on selected cards this month",
+  "Apply today, approval in 24 hours"
+ ],
+ "cards": [
+  {
+   "n": "Cashback Plus",
+   "cat": "Cashback",
+   "d": "Up to 5% back on groceries",
+   "fee": "Free for life",
+   "cb": 5,
+   "min": 5000
+  },
+  {
+   "n": "Miles Elite",
+   "cat": "Travel",
+   "d": "Miles on every spend plus lounge access",
+   "fee": "AED 0 first year",
+   "cb": 1.5,
+   "min": 10000
+  },
+  {
+   "n": "Lifestyle Rewards",
+   "cat": "Lifestyle",
+   "d": "Dining and entertainment offers",
+   "fee": "Free for life",
+   "cb": 2,
+   "min": 8000
+  }
+ ],
+ "banks": [
+  "CBD",
+  "Emirates NBD",
+  "ADCB",
+  "FAB",
+  "Mashreq",
+  "RAKBANK"
+ ],
+ "refMsg": "Hi! I found a great credit card advisor, Gokul. Check your eligibility and offers here:"
+}
