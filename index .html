@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gokul | Credit Card Advisor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#f3f6fb;--card:#fff;--ink:#0f1b3d;--mut:#5b6b85;--line:#dbe3ef;--acc:#1f2f8a;--acc2:#0a8a6a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+:root[data-theme="dark"]{--bg:#0b1220;--card:#151e33;--ink:#eaf0fb;--mut:#95a3bd;--line:#27334d;--acc:#2f3fb0;--acc2:#12a07c}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Plus Jakarta Sans","Noto Sans Arabic",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:440px;margin:0 auto;padding:56px 16px 16px}
+.cc{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--acc),#0f1b3d);color:#fff;border-radius:20px;padding:20px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer}
+.cc>div{position:relative;z-index:1}
+.cc .bg{position:absolute;inset-inline-end:-30px;top:-50px;opacity:.16;pointer-events:none}
+.chipg{position:absolute;inset-inline-start:20px;top:70px}
+.cc small{opacity:.9;font-weight:500;letter-spacing:.02em}
+.cc h1{margin:0;font-size:30px;font-weight:800;letter-spacing:-.025em;line-height:1.15}
+.hint{text-align:center;color:var(--mut);font-size:13px;margin:8px 0 14px}
+.row,.tools{display:flex;gap:10px;margin-bottom:14px}
+.tools{flex-wrap:wrap;margin-bottom:18px}
+.btn{flex:1;text-align:center;padding:12px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:15px;font-weight:600;text-decoration:none;cursor:pointer}
+.tools .btn{font-size:13px;padding:10px 8px}
+.btn.p{background:var(--acc2);color:#fff;border-color:var(--acc2)}
+h2{font-size:17px;font-weight:700;letter-spacing:-.01em;margin:24px 0 10px}
+.banner{background:var(--acc2);color:#fff;border-radius:12px;padding:9px 12px;font-size:13px;font-weight:600;text-align:center;margin-bottom:12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.chip{padding:6px 14px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:14px;cursor:pointer}
+.chip.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.item{background:var(--card);border-radius:14px;padding:12px 14px;margin-bottom:10px;display:flex;gap:12px;align-items:center}
+.info{flex:1;min-width:0}.item b{display:block}.item span{color:var(--mut);font-size:14px}
+.th{flex:0 0 54px;height:36px;border-radius:7px;position:relative}
+.th::after{content:"";position:absolute;inset-inline-start:6px;top:7px;width:12px;height:9px;border-radius:2px;background:#e6c36a}
+.mini{padding:7px 12px;border-radius:10px;border:1px solid var(--acc2);color:var(--acc2);background:none;font:inherit;font-size:13px;font-weight:600;text-decoration:none;cursor:pointer}
+.bk{display:flex;gap:8px;flex-wrap:wrap}
+.bk span{padding:6px 12px;border-radius:10px;background:var(--card);border:1px solid var(--line);font-size:14px}
+input,select,textarea{width:100%;font:inherit;padding:11px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);margin:4px 0 10px}
+input.ck{width:18px;height:18px;margin:0;padding:0;flex:0 0 auto}
+label{font-size:13px;color:var(--mut);display:block}
+.err{color:#c0392b;font-size:14px;min-height:20px}
+.box{background:var(--card);border-radius:14px;padding:14px;margin-top:12px}
+table.cmp{width:100%;border-collapse:collapse;font-size:13px;background:var(--card);border-radius:12px}
+.cmp th,.cmp td{padding:9px;border-bottom:1px solid var(--line);text-align:start}
+#qr{display:flex;justify-content:center;padding:16px;background:#fff;border-radius:14px;margin-bottom:14px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:14px;z-index:20;display:none}
+#adm{display:none;position:fixed;inset:0;background:var(--bg);overflow:auto;z-index:9;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+#adm.open{display:block}
+.tg{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.tg input{width:auto;margin:0}
+.crow{background:var(--card);border-radius:12px;padding:10px;margin-bottom:10px}
+.crow input{margin:2px 0 6px}
+#pop{position:fixed;left:0;right:0;bottom:0;z-index:8;padding:12px;display:none}
+#pop.open{display:block}
+#pop div{max-width:440px;margin:0 auto;background:var(--ink);color:var(--bg);border-radius:18px;padding:16px;display:flex;align-items:center;gap:12px}
+#pop a{color:var(--bg);font-weight:600;font-size:18px;text-decoration:none;flex:1}
+#pop button{background:none;border:0;color:var(--bg);font-size:22px;cursor:pointer}
+.qrc{background:#fff;padding:6px;border-radius:10px;line-height:0;flex:0 0 auto}
+.qrc img{display:block}
+.fab{position:fixed;inset-inline-end:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:54px;height:54px;border-radius:50%;border:0;background:var(--acc2);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:6;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.chatp{position:fixed;left:10px;right:10px;max-width:420px;margin:0 auto;bottom:calc(10px + env(safe-area-inset-bottom,0px));height:min(70vh,520px);background:var(--card);border:1px solid var(--line);border-radius:18px;z-index:7;display:flex;flex-direction:column;box-shadow:0 8px 30px rgba(0,0,0,.3);overflow:hidden}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--acc);color:#fff}
+.ch button{background:none;border:0;color:#fff;font-size:24px;cursor:pointer}
+.cm{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.mb{max-width:85%;padding:8px 12px;border-radius:14px;font-size:14px;background:var(--bg);color:var(--ink);align-self:flex-start;white-space:pre-wrap}
+.mb.u{align-self:flex-end;background:var(--acc2);color:#fff}
+.cq{display:flex;gap:6px;overflow-x:auto;padding:0 12px 8px}
+.cq .chip{white-space:nowrap;font-size:13px}
+.cin{display:flex;gap:8px;padding:8px 12px;border-top:1px solid var(--line)}
+.cin input{margin:0;flex:1}
+.cin .btn{flex:0 0 auto;padding:8px 14px}
+.cw{display:block;text-align:center;padding:9px;font-size:13px;font-weight:600;color:var(--acc2);text-decoration:none;border-top:1px solid var(--line)}
+#corner{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));inset-inline-end:12px;display:flex;gap:6px;z-index:7}
+.cb{min-width:36px;height:36px;padding:0 10px;border-radius:18px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.own{text-align:center;margin:28px 0 8px}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="adm"></div>
+<div id="pop"></div>
+<div id="toast" class="toast"></div>
+<div id="corner"></div>
+<div id="chat"></div>
+<script id="data" type="application/json">{"name":"Gokul","title":"Credit card advisor","tag":"UAE · All major banks","phone":"+971527074559","wa":"+971527074559","url":"https://claude.ai/artifact/SuwGFKFkuL5Xw2D2hrRBN9","delay":8,"t":{"cards":true,"banks":true,"elig":true,"wa":true,"popup":true,"offers":true,"compare":true,"calc":true,"share":true,"ar":true},"offers":["Free for life on selected cards this month","Apply today, approval in 24 hours"],"cards":[{"n":"Cashback Plus","cat":"Cashback","d":"Up to 5% back on groceries","fee":"Free for life","cb":5,"min":5000},{"n":"Miles Elite","cat":"Travel","d":"Miles on every spend plus lounge access","fee":"AED 0 first year","cb":1.5,"min":10000},{"n":"Lifestyle Rewards","cat":"Lifestyle","d":"Dining and entertainment offers","fee":"Free for life","cb":2,"min":8000}],"banks":["CBD","Emirates NBD","ADCB","FAB","Mashreq","RAKBANK"]}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+var D=JSON.parse(document.getElementById('data').textContent);
+D.t=Object.assign({offers:true,compare:true,calc:true,share:true,ar:true,refer:true,theme:true,chat:true},D.t);
+D.offers=D.offers||[];D.url=D.url||'';
+D.refMsg=D.refMsg||('Hi! I found a great credit card advisor, '+D.name+'. Check your eligibility and offers here:');
+var $=function(s){return document.querySelector(s)};
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var TR={en:{flip:'Tap the card to flip it',call:'Call',wa:'WhatsApp',save:'Save contact',share:'Share',qr:'QR code',all:'All',cards:'Cards',banks:'Banks I work with',find:'Find my best card',name:'Name',mob:'Mobile number',sal:'Monthly salary (AED)',emp:'Employment',sa:'Salaried',se:'Self-employed',chk:'Check eligibility',need:'Enter your name and mobile number.',apply:'Apply',cmp:'Compare',fee:'Annual fee',cb:'Cashback',min:'Min. salary',calc:'Cashback calculator',spend:'Monthly spend (AED)',mo:'per month',yr:'per year',best:'Best match',cont:'Continue on WhatsApp',none:'No match yet. Message me for options.',copied:'Number copied',link:'Link copied',contact:'Contact',tapc:'Tap Call or WhatsApp below',pick:'Select 2 or 3 cards to compare',hi:'Hi',light:'Light',dark:'Dark',ref:'Refer a friend',refd:'Know someone who needs a credit card? Send them my details.',fname:"Friend's name",fmob:"Friend's mobile (optional)",send:'Send on WhatsApp'},
+ar:{flip:'اضغط على البطاقة لقلبها',call:'اتصال',wa:'واتساب',save:'حفظ جهة الاتصال',share:'مشاركة',qr:'رمز QR',all:'الكل',cards:'البطاقات',banks:'البنوك التي أتعامل معها',find:'اعثر على أفضل بطاقة',name:'الاسم',mob:'رقم الجوال',sal:'الراتب الشهري (درهم)',emp:'نوع العمل',sa:'موظف',se:'عمل حر',chk:'تحقق من الأهلية',need:'أدخل اسمك ورقم جوالك.',apply:'قدّم الآن',cmp:'مقارنة',fee:'الرسوم السنوية',cb:'الاسترداد النقدي',min:'الحد الأدنى للراتب',calc:'حاسبة الاسترداد النقدي',spend:'الإنفاق الشهري (درهم)',mo:'شهرياً',yr:'سنوياً',best:'الأنسب لك',cont:'تابع عبر واتساب',none:'لا توجد نتيجة بعد. راسلني لمعرفة الخيارات.',copied:'تم نسخ الرقم',link:'تم نسخ الرابط',contact:'التواصل',tapc:'اضغط اتصال أو واتساب أدناه',pick:'اختر بطاقتين أو ثلاث للمقارنة',hi:'مرحباً',light:'فاتح',dark:'داكن',ref:'رشّح صديقاً',refd:'تعرف شخصاً يحتاج بطاقة ائتمان؟ أرسل له بياناتي.',fname:'اسم صديقك',fmob:'جوال صديقك (اختياري)',send:'أرسل عبر واتساب'}};
+var SAL=[{v:4000,en:'Below 5,000',ar:'أقل من 5,000'},{v:7500,en:'5,000 – 10,000',ar:'5,000 – 10,000'},{v:15000,en:'10,000 – 20,000',ar:'10,000 – 20,000'},{v:25000,en:'Above 20,000',ar:'أكثر من 20,000'}];
+var lang='en',flip=false,filter='',cats=[],sel=[],owner=false,popTimer=null,bt=null,bi=0;
+try{lang=localStorage.getItem('lg')==='ar'?'ar':'en'}catch(e){}
+var T=function(k){return(TR[lang]&&TR[lang][k])||TR.en[k]||k};
+var waNum=function(){return String(D.wa).replace(/\D/g,'')};
+var GFX='<svg class="bg" width="240" height="240" viewBox="0 0 240 240" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="1.5"><circle cx="160" cy="90" r="40"/><circle cx="160" cy="90" r="70"/><circle cx="160" cy="90" r="100"/></g></svg><svg class="chipg" width="84" height="30" viewBox="0 0 84 30" aria-hidden="true"><rect y="1" width="38" height="28" rx="6" fill="#e6c36a"/><path d="M0 10h38M0 20h38M13 1v28M25 1v28" stroke="#b8942f" stroke-width="1" fill="none"/><path d="M52 8c5 4 5 10 0 14M60 4c8 7 8 15 0 22M68 0c11 10 11 20 0 30" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/></svg>';
+function tint(c){var p=['#1f2f8a','#0a8a6a','#7c3aed','#d97706','#be123c'];return p[Math.max(0,cats.indexOf(c))%p.length]}
+function toast(m){var t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t.h);t.h=setTimeout(function(){t.style.display='none'},2200)}
+
+function shell(){
+  document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  $('#app').innerHTML='<div class="wrap"><div id="ban"></div><div id="cc"></div><div class="hint">'+T('flip')+'</div><div class="row" id="act"></div><div class="tools" id="tools"></div><div id="qrw"></div><div id="cards"></div><div id="cmp"></div><div id="calc"></div><div id="banks"></div><div id="elig"></div><div id="ref"></div><div class="own" id="own"></div></div>';
+  ban();card();acts();tools();chatRender();cardsSec();cmpSec();calcSec();banksSec();eligSec();refSec();ownBtn();
+}
+function ban(){
+  clearInterval(bt);var el=$('#ban');
+  if(!D.t.offers||!D.offers.length){el.innerHTML='';return}
+  var show=function(){el.innerHTML='<div class="banner">'+esc(D.offers[bi%D.offers.length])+'</div>';bi++};
+  show();if(D.offers.length>1)bt=setInterval(show,3500);
+}
+function card(){
+  var h=flip
+   ?'<div><small>'+T('contact')+'</small></div><div style="display:flex;align-items:flex-end;justify-content:space-between;gap:10px"><div><h1 dir="ltr">'+esc(D.phone)+'</h1><small>'+T('tapc')+'</small></div></div>'
+   :'<div><small>'+esc(D.title)+'</small></div><div style="display:flex;align-items:flex-end;justify-content:space-between;gap:10px"><div><h1>'+esc(D.name)+'</h1><small>'+esc(D.tag)+'</small></div>'+(window.QRCode?'<div id="cqr" class="qrc"></div>':'')+'</div>';
+  $('#cc').innerHTML='<div class="cc" onclick="flip=!flip;card()">'+GFX+h+'</div>';
+  if(window.QRCode&&$('#cqr')){try{new QRCode($('#cqr'),{text:D.url||location.href,width:76,height:76})}catch(e){}}
+}
+function acts(){
+  var h='<a class="btn" href="tel:'+esc(D.phone)+'">'+T('call')+'</a>';
+  if(D.t.wa)h+='<a class="btn p" href="https://wa.me/'+waNum()+'" target="_blank" rel="noopener">'+T('wa')+'</a>';
+  $('#act').innerHTML=h;
+}
+var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>';
+function tools(){
+  var h='<button class="btn" onclick="saveC()">'+T('save')+'</button>';
+  if(D.t.share){h+='<button class="btn" onclick="shareP()">'+T('share')+'</button>';if(window.QRCode)h+='<button class="btn" onclick="qr()">'+T('qr')+'</button>'}
+  $('#tools').innerHTML=h;
+  var k='';
+  if(D.t.theme)k+='<button class="cb" aria-label="'+(curTh()==='dark'?T('light'):T('dark'))+'" onclick="setTh()">'+(curTh()==='dark'?SUN:MOON)+'</button>';
+  if(D.t.ar)k+='<button class="cb" onclick="setL()">'+(lang==='ar'?'EN':'العربية')+'</button>';
+  $('#corner').innerHTML=k;
+}
+function curTh(){return document.documentElement.getAttribute('data-theme')||'light'}
+function setTh(){var n=curTh()==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('th',n)}catch(e){}tools()}
+function refSec(){
+  $('#ref').innerHTML=D.t.refer?'<h2>'+T('ref')+'</h2><div class="box" style="margin-top:0"><p style="margin:0 0 10px;color:var(--mut);font-size:14px">'+T('refd')+'</p><label>'+T('fname')+'</label><input id="rn"><label>'+T('fmob')+'</label><input id="rm" type="tel"><a class="btn p" style="display:block" target="_blank" rel="noopener" href="#" onclick="return sendRef(this)">'+T('send')+'</a></div>':'';
+}
+function sendRef(a){
+  var n=$('#rn').value.trim(),m=$('#rm').value.replace(/\D/g,'');
+  a.href='https://wa.me/'+m+'?text='+encodeURIComponent((n?T('hi')+' '+n+'! ':'')+D.refMsg+' '+D.url);
+  return true;
+}
+var chatOpen=false,chatMsgs=[],CQ=[];
+function L(a,b){return lang==='ar'?b:a}
+var CHATSVG='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>';
+function chatToggle(){chatOpen=!chatOpen;chatRender()}
+function intent(q){
+  q=q.toLowerCase();
+  var m=[['dbr',/dbr|debt|emi|loan|liabilit|calculat|eligib|نسبة الدين|قرض|التزام|أهلي|اهلي/],['cash',/cash|reward|best|استرداد|مكاف|أفضل|افضل/],['sal',/salar|income|eligib|qualif|minimum|راتب|دخل|أهلي|اهلي/],['fee',/fee|charge|free|annual|رسوم|مجان/],['docs',/doc|paper|emirates id|passport|statement|مستند|وثائق|اوراق|أوراق/],['banks',/bank|بنك/],['apply',/apply|how|start|تقدم|قدم|كيف/],['contact',/call|phone|number|contact|whatsapp|اتصال|رقم|تواصل|واتساب/]];
+  for(var i=0;i<m.length;i++)if(m[i][1].test(q))return m[i][0];
+  return '';
+}
+function ans(k){
+  var cs=D.cards,r;
+  if(k==='cash'){r=cs.filter(function(c){return c.cb}).sort(function(a,b){return b.cb-a.cb});return r.length?L('Top cashback: ','أعلى استرداد نقدي: ')+r.slice(0,3).map(function(c){return c.n+' ('+c.cb+'%)'}).join(', ')+'.':L('Message me on WhatsApp for current cashback offers.','راسلني عبر واتساب لمعرفة عروض الاسترداد الحالية.')}
+  if(k==='sal'){r=cs.filter(function(c){return c.min});return r.length?L('Minimum salary: ','الحد الأدنى للراتب: ')+r.map(function(c){return c.n+' (AED '+Number(c.min).toLocaleString('en')+')'}).join(', ')+'.':L('Salary requirements vary by bank. Message me to check yours.','تختلف متطلبات الراتب حسب البنك. راسلني للتحقق.')}
+  if(k==='fee'){r=cs.filter(function(c){return c.fee});return r.length?L('Annual fees: ','الرسوم السنوية: ')+r.map(function(c){return c.n+' ('+c.fee+')'}).join(', ')+'.':L('Fees vary by card. Message me for details.','تختلف الرسوم حسب البطاقة. راسلني للتفاصيل.')}
+  if(k==='docs')return L('Usually: Emirates ID, passport, latest salary certificate or payslip, and 3 months of bank statements. Requirements vary by bank.','عادةً: الهوية الإماراتية، جواز السفر، شهادة الراتب أو قسيمة الراتب، وكشف حساب لثلاثة أشهر. تختلف المتطلبات حسب البنك.');
+  if(k==='banks')return L('I work with: ','أتعامل مع: ')+D.banks.join(', ')+'.';
+  if(k==='apply')return L('Use "Find my best card" on this page, or message me on WhatsApp and I will guide you step by step.','استخدم "اعثر على أفضل بطاقة" في هذه الصفحة، أو راسلني عبر واتساب وسأرشدك خطوة بخطوة.');
+  if(k==='contact')return L('Call or WhatsApp me: ','اتصل أو راسلني عبر واتساب: ')+D.phone;
+  return '';
+}
+function addMsg(r,t){
+  chatMsgs.push({r:r,t:t});
+  var cm=$('#cm');if(!cm)return;
+  var d=document.createElement('div');d.className='mb'+(r==='u'?' u':'');d.textContent=t;cm.appendChild(d);cm.scrollTop=cm.scrollHeight;
+}
+function chatAsk(q,k){
+  addMsg('u',q);
+  if(dbrS.step>0&&!k){dbrStep(q);return}
+  dbrS={step:0,v:[]};
+  k=k||intent(q);
+  if(k==='dbr'){dbrS={step:1,v:[]};addMsg('b',L('Let us check your eligibility. What is your monthly salary (AED)?','لنتحقق من أهليتك. ما هو راتبك الشهري (درهم)؟'));return}
+  var a=ans(k);
+  addMsg('b',a||L('I am not sure about that. Message me on WhatsApp and I will answer personally.','لست متأكداً من ذلك. راسلني عبر واتساب وسأجيبك شخصياً.'));
+}
+var dbrS={step:0,v:[]};
+function num(s){s=String(s).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).replace(/[,\s]/g,'');var n=parseFloat(s);return isNaN(n)||n<0?null:n}
+function dbrStep(q){
+  var n=num(q);
+  if(n===null){addMsg('b',L('Please type a number, for example 15000.','اكتب رقماً، مثلاً 15000.'));return}
+  if(dbrS.step===1&&n<=0){addMsg('b',L('Salary must be more than 0. Type your monthly salary.','يجب أن يكون الراتب أكبر من صفر. اكتب راتبك الشهري.'));return}
+  dbrS.v.push(n);dbrS.step++;
+  if(dbrS.step===2){addMsg('b',L('Total monthly loan or EMI payments (AED)? Type 0 if none.','إجمالي أقساط القروض الشهرية (درهم)؟ اكتب 0 إن لم يوجد.'));return}
+  if(dbrS.step===3){addMsg('b',L('Total limit of your existing credit cards (AED)? Banks usually count about 5% of card limits as a monthly payment. Type 0 if none.','إجمالي حدود بطاقاتك الائتمانية الحالية (درهم)؟ تحتسب البنوك عادةً نحو 5% من الحد كالتزام شهري. اكتب 0 إن لم توجد.'));return}
+  var s=dbrS.v[0],liab=dbrS.v[1]+dbrS.v[2]*0.05,cap=+D.dbrMax||50,d=liab/s*100,room=s*cap/100-liab;
+  dbrS={step:0,v:[]};
+  var fmt=function(x){return Math.round(x).toLocaleString('en')};
+  var rec=D.cards.filter(function(c){return!c.min||c.min<=s}).map(function(c){return c.n});
+  var t=L('Your estimated DBR is ','نسبة الدين التقديرية لديك ')+d.toFixed(1)+'% ('+L('monthly payments','الالتزامات الشهرية')+' AED '+fmt(liab)+').\n';
+  if(d<=cap){
+    t+=L('This is within the usual '+cap+'% limit. You could add about AED '+fmt(room)+' per month in new payments.\n','هذه ضمن الحد المعتاد '+cap+'%. يمكنك إضافة نحو '+fmt(room)+' درهم شهرياً كالتزامات جديدة.\n');
+    t+=rec.length?L('Cards to consider for your salary: ','بطاقات مناسبة لراتبك: ')+rec.join(', ')+'.':L('No sample card matches this salary yet. Message me for options.','لا توجد بطاقة مطابقة لهذا الراتب حالياً. راسلني للخيارات.');
+  }else{
+    t+=L('This is above the usual '+cap+'% limit, so approval may be difficult. Message me and we can look at options.','هذه أعلى من الحد المعتاد '+cap+'% وقد يصعب الحصول على الموافقة. راسلني لنبحث الخيارات.');
+  }
+  t+=L('\nThis is an estimate. Each bank decides.','\nهذا تقدير فقط. القرار النهائي للبنك.');
+  addMsg('b',t);
+}
+function chatQ(i){chatAsk(CQ[i][1],CQ[i][0])}
+function chatSend(){var i=$('#ci'),q=i.value.trim();if(!q)return;i.value='';chatAsk(q)}
+function chatRender(){
+  var el=$('#chat');
+  if(D.t.chat===false){el.innerHTML='';return}
+  if(!chatOpen){el.innerHTML='<button class="fab" aria-label="Chat" onclick="chatToggle()">'+CHATSVG+'</button>';return}
+  if(!chatMsgs.length)chatMsgs.push({r:'b',t:L('Hi! I am the assistant for '+D.name+'. Ask me about cards, fees, salary or documents.','مرحباً! أنا مساعد '+D.name+'. اسألني عن البطاقات والرسوم والراتب والمستندات.')});
+  CQ=[['dbr',L('DBR check','فحص نسبة الدين')],['cash',L('Best cashback','أفضل استرداد')],['sal',L('Salary needed','الراتب المطلوب')],['fee',L('Fees','الرسوم')],['docs',L('Documents','المستندات')],['banks',L('Banks','البنوك')],['apply',L('How to apply','كيف أقدّم')]];
+  el.innerHTML='<div class="chatp"><div class="ch"><b>'+esc(L('Chat with '+D.name,'تحدث مع '+D.name))+'</b><button aria-label="Close" onclick="chatToggle()">×</button></div><div class="cm" id="cm"></div><div class="cq">'+CQ.map(function(x,i){return'<button class="chip" onclick="chatQ('+i+')">'+esc(x[1])+'</button>'}).join('')+'</div><div class="cin"><input id="ci" placeholder="'+L('Type your question','اكتب سؤالك')+'" onkeydown="if(event.key===\'Enter\')chatSend()"><button class="btn p" onclick="chatSend()">'+L('Send','إرسال')+'</button></div><a class="cw" target="_blank" rel="noopener" href="https://wa.me/'+waNum()+'">'+T('wa')+'</a></div>';
+  var cm=$('#cm');
+  chatMsgs.forEach(function(m){var d=document.createElement('div');d.className='mb'+(m.r==='u'?' u':'');d.textContent=m.t;cm.appendChild(d)});
+  cm.scrollTop=cm.scrollHeight;
+}
+function setL(){lang=lang==='ar'?'en':'ar';try{localStorage.setItem('lg',lang)}catch(e){}shell()}
+async function saveC(){
+  var v='BEGIN:VCARD\nVERSION:3.0\nFN:'+D.name+'\nTITLE:'+D.title+'\nTEL;TYPE=CELL:'+D.phone+'\nURL:'+D.url+'\nEND:VCARD';
+  try{
+    var f=new File([v],D.name+'.vcf',{type:'text/vcard'});
+    if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:D.name});return}
+  }catch(e){if(e&&e.name==='AbortError')return}
+  try{await navigator.clipboard.writeText(D.name+' '+D.phone);toast(T('copied'))}catch(e){location.href='tel:'+D.phone}
+}
+async function shareP(){
+  if(navigator.share){try{await navigator.share({title:D.name,url:D.url});return}catch(e){if(e&&e.name==='AbortError')return}}
+  try{await navigator.clipboard.writeText(D.url);toast(T('link'))}catch(e){}
+}
+function qr(){
+  var w=$('#qrw');
+  if(w.innerHTML){w.innerHTML='';return}
+  w.innerHTML='<div id="qr"></div>';
+  new QRCode($('#qr'),{text:D.url,width:200,height:200});
+}
+function cardsSec(){
+  var el=$('#cards');
+  if(!D.t.cards){el.innerHTML='';return}
+  cats=Array.from(new Set(D.cards.map(function(c){return c.cat})));
+  if(filter&&cats.indexOf(filter)<0)filter='';
+  var chips='<button class="chip'+(!filter?' on':'')+'" onclick="setF(-1)">'+T('all')+'</button>'+cats.map(function(c,i){return'<button class="chip'+(c===filter?' on':'')+'" onclick="setF('+i+')">'+esc(c)+'</button>'}).join('');
+  var list=D.cards.map(function(c,i){return{c:c,i:i}}).filter(function(x){return!filter||x.c.cat===filter}).map(function(x){
+    var c=x.c,msg=T('hi')+' '+D.name+', I am interested in the '+c.n+' card.';
+    return'<div class="item">'+(D.t.compare?'<input class="ck" type="checkbox" aria-label="'+T('cmp')+'"'+(sel.indexOf(x.i)>=0?' checked':'')+' onchange="pick('+x.i+',this.checked)">':'')+'<i class="th" style="background:'+tint(c.cat)+'"></i><div class="info"><b>'+esc(c.n)+'</b><span>'+esc(c.d)+'</span></div><a class="mini" target="_blank" rel="noopener" href="https://wa.me/'+waNum()+'?text='+encodeURIComponent(msg)+'">'+T('apply')+'</a></div>'}).join('');
+  el.innerHTML='<h2>'+T('cards')+'</h2><div class="chips">'+chips+'</div>'+list;
+}
+function setF(i){filter=i<0?'':cats[i];cardsSec()}
+function pick(i,on){
+  var k=sel.indexOf(i);
+  if(on&&k<0){if(sel.length>=3){cardsSec();return}sel.push(i)}
+  if(!on&&k>=0)sel.splice(k,1);
+  cmpSec();
+}
+function cmpSec(){
+  var el=$('#cmp');
+  if(!D.t.cards||!D.t.compare){el.innerHTML='';return}
+  if(sel.length<2){el.innerHTML=sel.length===1?'<div class="hint">'+T('pick')+'</div>':'';return}
+  var cs=sel.map(function(i){return D.cards[i]}).filter(Boolean);
+  var row=function(l,f){return'<tr><th>'+l+'</th>'+cs.map(function(c){return'<td>'+f(c)+'</td>'}).join('')+'</tr>'};
+  el.innerHTML='<h2>'+T('cmp')+'</h2><div style="overflow-x:auto"><table class="cmp"><tr><th></th>'+cs.map(function(c){return'<th>'+esc(c.n)+'</th>'}).join('')+'</tr>'+row(T('fee'),function(c){return esc(c.fee||'-')})+row(T('cb'),function(c){return c.cb?c.cb+'%':'-'})+row(T('min'),function(c){return c.min?'AED '+Number(c.min).toLocaleString('en'):'-'})+'</table></div>';
+}
+function calcSec(){
+  $('#calc').innerHTML=D.t.calc?'<h2>'+T('calc')+'</h2><label>'+T('spend')+'</label><input id="sp" type="number" inputmode="numeric" min="0" oninput="calc()"><div id="cr"></div>':'';
+}
+function calc(){
+  var s=+$('#sp').value||0;
+  if(!s){$('#cr').innerHTML='';return}
+  var r=D.cards.filter(function(c){return c.cb}).map(function(c){return{c:c,m:s*c.cb/100}}).sort(function(a,b){return b.m-a.m});
+  $('#cr').innerHTML=r.map(function(x,i){return'<div class="item"><div class="info"><b>'+esc(x.c.n)+(i===0?' · '+T('best'):'')+'</b><span>AED '+x.m.toFixed(0)+' '+T('mo')+' · AED '+(x.m*12).toFixed(0)+' '+T('yr')+'</span></div></div>'}).join('');
+}
+function banksSec(){
+  $('#banks').innerHTML=D.t.banks?'<h2>'+T('banks')+'</h2><div class="bk">'+D.banks.map(function(b){return'<span>'+esc(b)+'</span>'}).join('')+'</div>':'';
+}
+function eligSec(){
+  $('#elig').innerHTML=D.t.elig?'<h2>'+T('find')+'</h2><label>'+T('name')+'</label><input id="en" autocomplete="name"><label>'+T('mob')+'</label><input id="ep" type="tel" autocomplete="tel"><label>'+T('sal')+'</label><select id="es">'+SAL.map(function(s,i){return'<option value="'+i+'">'+s[lang]+'</option>'}).join('')+'</select><label>'+T('emp')+'</label><select id="ee"><option value="0">'+T('sa')+'</option><option value="1">'+T('se')+'</option></select><div class="err" id="err"></div><button class="btn p" style="width:100%" onclick="chk()">'+T('chk')+'</button><div id="res"></div>':'';
+}
+function chk(){
+  var n=$('#en').value.trim(),p=$('#ep').value.trim();
+  if(!n||!p){$('#err').textContent=T('need');return}
+  $('#err').textContent='';
+  var s=SAL[+$('#es').value],e=+$('#ee').value;
+  var rec=D.cards.filter(function(c){return!c.min||c.min<=s.v}).sort(function(a,b){return(b.cb||0)-(a.cb||0)});
+  var msg='Hi '+D.name+', please check my card eligibility.\nName: '+n+'\nMobile: '+p+'\nSalary: '+s.en+'\nEmployment: '+(e?'Self-employed':'Salaried')+(rec.length?'\nInterested in: '+rec.slice(0,2).map(function(c){return c.n}).join(', '):'');
+  $('#res').innerHTML='<div class="box"><b>'+T('best')+'</b>'+(rec.length?rec.slice(0,3).map(function(c){return'<div style="margin-top:6px">'+esc(c.n)+' <span style="color:var(--mut)">· '+esc(c.d)+'</span></div>'}).join(''):'<div style="margin-top:6px">'+T('none')+'</div>')+'<a class="btn p" style="display:block;margin-top:12px" target="_blank" rel="noopener" href="https://wa.me/'+waNum()+'?text='+encodeURIComponent(msg)+'">'+T('cont')+'</a></div>';
+}
+function ownBtn(){$('#own').innerHTML=owner?'<button class="chip" onclick="openAdm()">Admin panel</button>':''}
+
+function showPop(){
+  clearTimeout(popTimer);
+  if(!D.t.popup||owner)return;
+  popTimer=setTimeout(function(){
+    $('#pop').innerHTML='<div><a href="tel:'+esc(D.phone)+'">'+T('call')+' '+esc(D.phone)+'</a><button aria-label="Close" onclick="$(\'#pop\').className=\'\'">×</button></div>';
+    $('#pop').className='open';
+  },Math.max(0,+D.delay||0)*1000);
+}
+
+function openAdm(){admRender();$('#adm').className='open'}
+function closeAdm(){$('#adm').className='';sel=[];shell();showPop()}
+function admRender(){
+  var tl={cards:'Show cards',banks:'Show banks',elig:'Show eligibility check',wa:'Show WhatsApp button',popup:'Contact number popup',offers:'Offers banner',compare:'Card comparison',calc:'Cashback calculator',share:'Share and QR',ar:'Arabic toggle',refer:'Refer a friend',theme:'Light/dark toggle',chat:'Chat assistant'};
+  var h='<div class="wrap"><h2>Admin panel</h2>';
+  [['name','Name'],['title','Title'],['tag','Tagline'],['phone','Phone'],['wa','WhatsApp number'],['url','Page link (used for Share and QR)']].forEach(function(f){
+    h+='<label>'+f[1]+'</label><input value="'+esc(D[f[0]])+'" onchange="D.'+f[0]+'=this.value">';
+  });
+  h+='<label>Popup delay (seconds)</label><input type="number" min="0" value="'+esc(D.delay)+'" onchange="D.delay=+this.value"><h2>Features</h2>';
+  Object.keys(tl).forEach(function(k){
+    h+='<div class="tg"><span>'+tl[k]+'</span><input type="checkbox"'+(D.t[k]?' checked':'')+' onchange="D.t.'+k+'=this.checked"></div>';
+  });
+  h+='<label>DBR limit % used by the chat calculator</label><input type="number" value="'+esc(+D.dbrMax||50)+'" onchange="D.dbrMax=+this.value">';
+  h+='<label>Refer a friend message (the page link is added automatically)</label><textarea rows="3" onchange="D.refMsg=this.value">'+esc(D.refMsg)+'</textarea><h2>Offers banner</h2><label>One offer per line</label><textarea rows="3" onchange="D.offers=this.value.split(\'\\n\').map(function(s){return s.trim()}).filter(Boolean)">'+esc(D.offers.join('\n'))+'</textarea><h2>Cards</h2>';
+  D.cards.forEach(function(c,i){
+    h+='<div class="crow"><input placeholder="Name" value="'+esc(c.n)+'" onchange="D.cards['+i+'].n=this.value"><input placeholder="Category" value="'+esc(c.cat)+'" onchange="D.cards['+i+'].cat=this.value"><input placeholder="Description" value="'+esc(c.d)+'" onchange="D.cards['+i+'].d=this.value"><input placeholder="Annual fee" value="'+esc(c.fee||'')+'" onchange="D.cards['+i+'].fee=this.value"><input type="number" step="0.1" placeholder="Cashback %" value="'+esc(c.cb||'')+'" onchange="D.cards['+i+'].cb=+this.value"><input type="number" placeholder="Min. salary (AED)" value="'+esc(c.min||'')+'" onchange="D.cards['+i+'].min=+this.value"><button class="chip" onclick="D.cards.splice('+i+',1);admRender()">Remove</button></div>';
+  });
+  h+='<button class="chip" onclick="D.cards.push({n:\'New card\',cat:\'General\',d:\'\',fee:\'\',cb:0,min:0});admRender()">Add card</button>';
+  h+='<h2>Banks</h2><label>Separate with commas</label><textarea rows="3" onchange="D.banks=this.value.split(\',\').map(function(s){return s.trim()}).filter(Boolean)">'+esc(D.banks.join(', '))+'</textarea>';
+  h+='<div class="err" id="st"></div><div class="row"><button class="btn" onclick="closeAdm()">Close</button><button class="btn p" onclick="save()">Save and publish</button></div></div>';
+  $('#adm').innerHTML=h;
+}
+async function save(){
+  var st=$('#st');st.style.color='var(--mut)';st.textContent='Publishing…';
+  try{
+    var a=await claude.use('artifact');
+    if(!a){st.style.color='#c0392b';st.textContent='Publishing is not available in this view.';return}
+    var c=document.documentElement.cloneNode(true);
+    c.removeAttribute('dir');c.removeAttribute('data-theme');c.setAttribute('lang','en');
+    ['#app','#adm','#pop','#toast','#corner','#chat'].forEach(function(s){var n=c.querySelector(s);n.innerHTML='';n.textContent='';n.removeAttribute('style');if(s!=='#toast')n.className=''});
+    c.querySelector('#data').textContent=JSON.stringify(D).replace(/</g,'\\u003c');
+    await a.publish('<!DOCTYPE html>\n'+c.outerHTML);
+  }catch(e){
+    st.style.color='#c0392b';
+    st.textContent=(e&&e.code==='conflict')?'Someone else published first. The page reloaded.':'Could not publish. Only the page owner can save changes.';
+  }
+}
+
+if(D.t.theme){try{document.documentElement.setAttribute('data-theme',localStorage.getItem('th')||'light')}catch(e){document.documentElement.setAttribute('data-theme','light')}}
+shell();showPop();
+(async function(){
+  try{
+    if(!window.claude||!claude.use)return;
+    var u=await claude.use('user');
+    if(u&&u.isOwner()){owner=true;ownBtn();clearTimeout(popTimer);$('#pop').className=''}
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
