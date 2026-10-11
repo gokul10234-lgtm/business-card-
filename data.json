@@ -15,7 +15,7 @@
   "refer": true,
   "theme": true,
   "chat": true,
-  "cards": false,
+  "cards": true,
   "banks": true,
   "elig": true,
   "wa": true,
@@ -27,37 +27,40 @@
  ],
  "cards": [
   {
-   "n": "Cashback Plus",
+   "n": "CBD  Visa Infinite",
+   "cat": "Complimentary rounds of golf",
+   "d": "50% off on cinema tickets and much more",
+   "fee": " No annual fee for the first year. Annual fee of AED 750 + VAT from second year onwards ",
+   "cb": 0,
+   "min": 15000
+  },
+  {
+   "n": "CBD Super Saver",
    "cat": "Cashback",
-   "d": "Up to 5% back on groceries",
-   "fee": "Free for life",
-   "cb": 5,
+   "d": "Enjoy up to 10% cashback on your everyday spends and a lot more. Global Airport Visa Companion Up to 10% cashback on bills, education, supermarkets and fuel",
+   "fee": "Free for first year(Annual fee of AED 400 + VAT from second year onwards ",
+   "cb": 10,
    "min": 5000
   },
   {
-   "n": "Miles Elite",
-   "cat": "Travel",
-   "d": "Miles on every spend plus lounge access",
-   "fee": "AED 0 first year",
-   "cb": 1.5,
-   "min": 10000
+   "n": "CBD Smiles Visa Signature",
+   "cat": " rewards",
+   "d": "Complimentary global Airport Visa Companion ,Multi-trip travel insurance 90-day complimentary, subscription to Smiles Unlimited",
+   "fee": "First year free* (Annual fee of 󸲻 500 waived for first year)",
+   "cb": 0,
+   "min": 5000
   },
   {
-   "n": "Lifestyle Rewards",
-   "cat": "Lifestyle",
-   "d": "Dining and entertainment offers",
+   "n": "CBD One",
+   "cat": "Cashback",
+   "d": "Earn up to 󸲻 135 cashback every month ,Global Airport Visa Companion",
    "fee": "Free for life",
-   "cb": 2,
-   "min": 8000
+   "cb": 0,
+   "min": 5000
   }
  ],
  "banks": [
-  "CBD",
-  "Emirates NBD",
-  "ADCB",
-  "FAB",
-  "Mashreq",
-  "RAKBANK"
+  "CBD"
  ],
  "refMsg": "Hi! I found a great credit card advisor, Gokul. Check your eligibility and offers here:"
 }
