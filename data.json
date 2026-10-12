@@ -72,7 +72,9 @@
   }
  ],
  "banks": [
-  "CBD"
+  "CBD",
+  "DIB",
+  "AFAAQ"
  ],
  "refMsg": "Hi! I found a great credit card advisor, Gokul. Check your eligibility and offers here:",
  "qa": [
