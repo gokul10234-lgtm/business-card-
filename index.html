@@ -6,14 +6,14 @@
 <title>Gokul | Credit Card Advisor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap">
 <style>
 :root{--bg:#f3f6fb;--card:#fff;--ink:#0f1b3d;--mut:#5b6b85;--line:#dbe3ef;--acc:#1f2f8a;--acc2:#0a8a6a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 
 :root[data-theme="dark"]{--bg:#0b1220;--card:#151e33;--ink:#eaf0fb;--mut:#95a3bd;--line:#27334d;--acc:#2f3fb0;--acc2:#12a07c}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Plus Jakarta Sans","Noto Sans Arabic",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Inter","Noto Sans Arabic",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
 .wrap{max-width:440px;margin:0 auto;padding:56px 16px 16px}
 .cc{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--acc),#0f1b3d);color:#fff;border-radius:20px;padding:20px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer}
 .cc>div{position:relative;z-index:1}
@@ -80,6 +80,72 @@ table.cmp{width:100%;border-collapse:collapse;font-size:13px;background:var(--ca
 #corner{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));inset-inline-end:12px;display:flex;gap:6px;z-index:7}
 .cb{min-width:36px;height:36px;padding:0 10px;border-radius:18px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.12)}
 .own{text-align:center;margin:28px 0 8px}
+
+/* ===== Dubai-it editorial theme: warm off-white, black type, hairlines, pill buttons ===== */
+:root{--bg:#EDECE8;--card:#ffffff;--ink:#171715;--mut:#7a7a74;--line:#cfcfca;--acc:#171715;--acc2:#171715}
+:root[data-theme="dark"]{--bg:#151514;--card:#262624;--ink:#f2f1ee;--mut:#9a9a94;--line:#3b3b38;--acc:#f2f1ee;--acc2:#f2f1ee}
+body{letter-spacing:-.005em}
+.wrap{max-width:460px;padding:56px 22px 24px}
+.cc{background:repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 1px,rgba(0,0,0,.035) 1px 2px),linear-gradient(135deg,#e4e5e7 0%,#a9abb0 28%,#d3d4d7 52%,#8e9096 78%,#bfc1c5 100%);color:#1f2024;border-radius:20px;padding:20px 22px;min-height:0;aspect-ratio:1.586/1;border:1px solid rgba(255,255,255,.75);box-shadow:0 16px 32px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.85),inset 0 -1px 0 rgba(0,0,0,.18);gap:0}
+.cc::before{content:"";position:absolute;inset:0;background:linear-gradient(112deg,transparent 28%,rgba(255,255,255,.5) 44%,transparent 58%);pointer-events:none;z-index:0}
+.chipg{display:block;top:36%;inset-inline-start:22px}
+.chipg path:last-of-type{stroke:#3a3b40;opacity:.8}
+@media(max-width:360px){.cc h1{font-size:32px}.chipg{top:30%;transform:scale(.85);transform-origin:left top}}
+.cc .bg{display:block;opacity:.35}
+.cc h1{font-size:clamp(34px,11.5vw,52px);text-shadow:0 1px 0 rgba(255,255,255,.6);font-weight:800;letter-spacing:-.045em;line-height:.98}
+.cc h1[dir]{font-size:26px;letter-spacing:-.03em}
+.cc small{opacity:1;font-weight:500;font-size:14px;letter-spacing:.01em;color:#1f2024;text-shadow:0 1px 0 rgba(255,255,255,.55)}
+.cc>div:first-child small{color:#1f2024;opacity:.7}
+.qrc{border:1px solid var(--line);border-radius:12px}
+.hint{color:var(--mut)}
+h2{font-size:22px;font-weight:800;letter-spacing:-.025em;margin:36px 0 10px}
+.btn{border-radius:999px;border:0;background:#fff;color:var(--ink);font-weight:500}
+:root[data-theme="dark"] .btn{background:var(--card)}
+.btn.p{background:var(--ink);color:var(--bg)}
+#act .btn,#elig .btn.p,.box a.btn.p{display:flex;justify-content:space-between;align-items:center;text-align:start;padding:16px 22px;font-size:17px}
+#act .btn::after,#elig .btn.p::after,.box a.btn.p::after{content:"\203A";font-size:24px;line-height:1;font-weight:400}
+.tools .btn{background:transparent;border:1px solid var(--line);font-weight:500}
+.chip{border-radius:999px;background:transparent;border:1px solid var(--line);color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.banner{display:flex;align-items:stretch;padding:0;overflow:hidden;background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:999px;text-align:start;font-weight:500}
+.banner .bt{background:var(--ink);color:var(--bg);font-size:12px;font-weight:700;letter-spacing:.06em;padding:11px 15px;flex:0 0 auto}
+.banner .bx{flex:1;padding:11px 15px;font-size:13px;display:flex;align-items:center}
+.item{background:none;border-radius:0;border-bottom:1px solid var(--line);padding:16px 0;margin:0}
+.item span{color:var(--mut);font-style:normal}
+#cards,#calc{counter-reset:n}
+#cards .item,#calc .item{counter-increment:n}
+#cards .item::before,#calc .item::before{content:counter(n) ".";color:var(--mut);flex:0 0 26px;font-size:16px}
+.th{display:none}
+.mini{border-radius:999px;border:1px solid var(--ink);color:var(--ink)}
+.bk span{border-radius:999px;background:transparent;border:1px solid var(--line)}
+.box{background:none;border-radius:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0}
+table.cmp{background:none;border-radius:0}
+input,select,textarea{border-radius:14px;background:var(--card)}
+.fab{background:var(--card);box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.chatp{background:var(--bg);border-radius:20px}
+.ch{background:var(--ink);color:var(--bg)}
+.ch button{color:var(--bg)}
+.mb{background:var(--card)}
+.mb.u{background:var(--ink);color:var(--bg)}
+.cw{color:var(--ink)}
+.cb{background:var(--card);box-shadow:none}
+#pop div{border-radius:999px}
+.toast{border-radius:999px}
+
+/* ===== green WhatsApp buttons and chat assistant ===== */
+:root{--wa:#128C4A}
+a.btn.p[href*="wa.me"],a.btn.p[onclick*="docsSend"],a.btn.p[onclick*="sendRef"],a.btn.p[onclick*="bookSend"]{background:var(--wa);color:#fff}
+.box a.btn.p{display:flex!important;justify-content:space-between;align-items:center}
+.mini[href*="wa.me"]{border-color:var(--wa);color:var(--wa)}
+.fab span span{border-color:var(--wa)!important}
+.fab svg[style*="position:absolute"] circle{fill:var(--wa)}
+.ch{background:var(--wa);color:#fff}
+.ch button{color:#fff}
+.ch span span{border-color:#fff!important}
+.ch svg[style*="position:absolute"] circle{fill:#0b5e32}
+.mb.u{background:var(--wa);color:#fff}
+.cin .btn.p{background:var(--wa);color:#fff}
+.cw{color:var(--wa)}
 </style>
 </head>
 <body>
@@ -87,7 +153,7 @@ table.cmp{width:100%;border-collapse:collapse;font-size:13px;background:var(--ca
 <div id="adm"></div>
 <div id="pop"></div>
 <div id="toast" class="toast"></div>
-<form name="lead" method="POST" data-netlify="true" hidden><input name="type"><input name="name"><input name="mobile"><input name="details"></form>
+<form name="lead" method="POST" data-netlify="true" hidden><input name="type"><input name="name"><input name="mobile"><input name="details"><input name="source"><input name="score"><input name="time"></form>
 <div id="corner"></div>
 <div id="chat"></div>
 <script id="data" type="application/json">{"name":"Gokul","title":"Credit card advisor","tag":"UAE · All major banks","phone":"+971527074559","wa":"+971527074559","url":"","delay":8,"t":{"cards":true,"banks":true,"elig":true,"wa":true,"popup":true,"offers":true,"compare":true,"calc":true,"share":true,"ar":true},"offers":["Free for life on selected cards this month","Apply today, approval in 24 hours"],"cards":[{"n":"Cashback Plus","cat":"Cashback","d":"Up to 5% back on groceries","fee":"Free for life","cb":5,"min":5000},{"n":"Miles Elite","cat":"Travel","d":"Miles on every spend plus lounge access","fee":"AED 0 first year","cb":1.5,"min":10000},{"n":"Lifestyle Rewards","cat":"Lifestyle","d":"Dining and entertainment offers","fee":"Free for life","cb":2,"min":8000}],"banks":["CBD","Emirates NBD","ADCB","FAB","Mashreq","RAKBANK"]}</script>
@@ -115,13 +181,13 @@ function toast(m,ms){var t=$('#toast');t.textContent=m;t.style.display='block';c
 
 function shell(){
   document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
-  $('#app').innerHTML='<div class="wrap"><div id="ban"></div><div id="cc"></div><div class="hint">'+T('flip')+'</div><div id="hrs"></div><div class="row" id="act"></div><div class="tools" id="tools"></div><div id="qrw"></div><div id="cards"></div><div id="cmp"></div><div id="quiz"></div><div id="calc"></div><div id="banks"></div><div id="trust"></div><div id="elig"></div><div id="docs"></div><div id="ref"></div><div class="own" id="own"></div></div>';
-  ban();card();acts();tools();chatRender();cardsSec();cmpSec();calcSec();banksSec();eligSec();docsSec();quizSec();trustSec();hrsSec();refSec();ownBtn();
+  $('#app').innerHTML='<div class="wrap"><div id="ban"></div><div id="cc"></div><div class="hint">'+T('flip')+'</div><div id="hrs"></div><div class="row" id="act"></div><div class="tools" id="tools"></div><div id="qrw"></div><div id="cards"></div><div id="cmp"></div><div id="quiz"></div><div id="calc"></div><div id="banks"></div><div id="trust"></div><div id="elig"></div><div id="docs"></div><div id="book"></div><div id="ref"></div><div class="own" id="own"></div></div>';
+  ban();card();acts();tools();chatRender();cardsSec();cmpSec();calcSec();banksSec();eligSec();docsSec();bookSec();quizSec();trustSec();hrsSec();refSec();ownBtn();
 }
 function ban(){
   clearInterval(bt);var el=$('#ban');
   var lo=liveOffers();if(!D.t.offers||!lo.length){el.innerHTML='';return}
-  var show=function(){el.innerHTML='<div class="banner">'+esc(lo[bi%lo.length])+'</div>';bi++};
+  var show=function(){el.innerHTML='<div class="banner"><span class="bt">'+L('OFFER','عرض')+'</span><span class="bx">'+esc(lo[bi%lo.length])+'</span></div>';bi++};
   show();if(lo.length>1)bt=setInterval(show,3500);
 }
 function card(){
@@ -132,8 +198,8 @@ function card(){
   if(window.QRCode&&$('#cqr')){try{new QRCode($('#cqr'),{text:PU()||('tel:'+D.phone),width:76,height:76})}catch(e){}}
 }
 function acts(){
-  var h=D.t.call!==false?'<a class="btn" href="tel:'+esc(D.phone)+'">'+T('call')+'</a>':'';
-  if(D.t.wa)h+='<a class="btn p" href="https://wa.me/'+waNum()+'" target="_blank" rel="noopener">'+T('wa')+'</a>';
+  var h=D.t.call!==false?'<a class="btn" onclick="track(\'call\')" href="tel:'+esc(D.phone)+'">'+T('call')+'</a>':'';
+  if(D.t.wa)h+='<a class="btn p" onclick="track(\'whatsapp\')" href="https://wa.me/'+waNum()+'" target="_blank" rel="noopener">'+T('wa')+'</a>';
   $('#act').innerHTML=h;
 }
 var SUN='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg>',MOON='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>';
@@ -163,7 +229,7 @@ var chatOpen=false,chatMsgs=[],CQ=[];
 function L(a,b){return lang==='ar'?b:a}
 var CHATSVG='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="12" rx="4"/><path d="M12 7V4M2 12v3M22 12v3M9.5 16.5h5"/><circle cx="12" cy="3" r="1"/><circle cx="9" cy="12.5" r="1" fill="currentColor"/><circle cx="15" cy="12.5" r="1" fill="currentColor"/></svg>';
 var SIL='<svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;border-radius:50%" aria-hidden="true"><rect width="64" height="64" fill="#e5e7eb"/><circle cx="32" cy="26" r="10" fill="#9ca3af"/><path d="M10 66c0-13 9-21 22-21s22 8 22 21z" fill="#9ca3af"/></svg>';
-var BADGE='<svg viewBox="0 0 24 24" style="position:absolute;right:-3px;top:-3px;width:36%;height:36%" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0a8a6a" stroke="#fff" stroke-width="2"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var BADGE='<svg viewBox="0 0 24 24" style="position:absolute;right:-3px;top:-3px;width:36%;height:36%" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#171715" stroke="#fff" stroke-width="2"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 function avHtml(t){
   var inner=D.avatar?'<img src="'+esc(D.avatar)+'" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block">':SIL;
   return '<span style="position:relative;display:block;width:100%;height:100%"><span style="display:block;width:100%;height:100%;box-sizing:border-box;border:'+(t?2:3)+'px solid var(--acc2);background:#fff;border-radius:50%;padding:'+(t?1:2)+'px">'+inner+'</span>'+(D.t.badge===false?'':BADGE)+'</span>';
@@ -179,7 +245,7 @@ function avUp(inp){
   r.readAsDataURL(f);
 }
 function chatOnline(){if(D.t.hours===false)return true;var h=D.hrs||{from:9,to:21},n=dubaiNow().getHours();return n>=+h.from&&n<+h.to}
-function chatToggle(){chatOpen=!chatOpen;chatRender()}
+function chatToggle(){chatOpen=!chatOpen;if(chatOpen)track('chat');chatRender()}
 function intent(q){
   q=q.toLowerCase();
   var m=[['dbr',/dbr|debt|emi|loan|liabilit|calculat|eligib|نسبة الدين|قرض|التزام|أهلي|اهلي/],['cash',/cash|reward|best|استرداد|مكاف|أفضل|افضل/],['sal',/salar|income|eligib|qualif|minimum|راتب|دخل|أهلي|اهلي/],['fee',/fee|charge|free|annual|رسوم|مجان/],['banks',/bank|بنك/],['contact',/call|phone|number|contact|whatsapp|اتصال|رقم|تواصل|واتساب/]];
@@ -285,7 +351,7 @@ function ghLoad(){
     if(j&&j.cards){
       j.t=Object.assign({offers:true,compare:true,calc:true,share:true,ar:true,refer:true,theme:true,chat:true},j.t);
       j.offers=j.offers||[];j.url=j.url||'';j.refMsg=j.refMsg||D.refMsg;
-      D=j;fixD();shell();showPop();
+      D=j;fixD();shell();showPop();visitOnce();
     }
   }).catch(function(){});
 }
@@ -307,11 +373,12 @@ async function ghSave(){
 function nz(x){var m=String(x==null?'':x).replace(/,/g,'').match(/\d+(\.\d+)?/);return m?parseFloat(m[0]):0}
 function fp(x){var t=String(x).trim();return /^[\d.]+$/.test(t)?t+'%':t}
 function fm(x){var t=String(x).trim();return /^[\d,.]+$/.test(t)?'AED '+Number(t.replace(/,/g,'')).toLocaleString('en'):t}
-function xtraHtml(){
+function xtraHtml(){return xtraHtml0()+'<div id="dbrm"></div>'}
+function xtraHtml0(){
   return '<label>'+L('Company name','اسم الشركة')+'</label><input id="ec" autocomplete="organization">'
    +'<label>'+L('Existing credit card (bank and card name)','بطاقتك الائتمانية الحالية (البنك واسم البطاقة)')+'</label><input id="ex" placeholder="'+L('Leave empty if none','اتركه فارغاً إن لم توجد')+'">'
-   +'<label>'+L('Existing card limit (AED)','حد البطاقة الحالية (درهم)')+'</label><input id="el" inputmode="numeric" placeholder="'+L('For example 20,000','مثال 20,000')+'">'
-   +'<label>'+L('Monthly EMI or loan payments (AED)','القسط الشهري للقروض (درهم)')+'</label><input id="em" inputmode="numeric" placeholder="'+L('Type 0 if none','اكتب 0 إن لم يوجد')+'">';
+   +'<label>'+L('Existing card limit (AED)','حد البطاقة الحالية (درهم)')+'</label><input id="el" oninput="dbrLive()" inputmode="numeric" placeholder="'+L('For example 20,000','مثال 20,000')+'">'
+   +'<label>'+L('Monthly EMI or loan payments (AED)','القسط الشهري للقروض (درهم)')+'</label><input id="em" oninput="dbrLive()" inputmode="numeric" placeholder="'+L('Type 0 if none','اكتب 0 إن لم يوجد')+'">';
 }
 function xv(id){var e=$('#'+id);return e&&e.value?String(e.value).trim():''}
 function xtraMsg(){
@@ -328,9 +395,9 @@ function fixD(){
     {q:'Documents needed',qa:'المستندات المطلوبة',k:'doc,paper,emirates id,passport,statement,مستند,وثائق,اوراق,أوراق',a:'Usually: Emirates ID, passport, latest salary certificate or payslip, and 3 months of bank statements. Requirements vary by bank.',aa:'عادةً: الهوية الإماراتية، جواز السفر، شهادة الراتب أو قسيمة الراتب، وكشف حساب لثلاثة أشهر. تختلف المتطلبات حسب البنك.'},
     {q:'How to apply',qa:'كيف أقدّم',k:'apply,how to apply,get started,تقدم,قدم,كيف أقدم',a:'Use "Find my best card" on this page, or message me on WhatsApp and I will guide you step by step.',aa:'استخدم "اعثر على أفضل بطاقة" في هذه الصفحة، أو راسلني عبر واتساب وسأرشدك خطوة بخطوة.'}
   ];
-  D.cats=D.cats||[];
+  D.cats=D.cats||[];D.bankDocs=D.bankDocs||{};
   D.cards.forEach(function(c){if(c.cat&&D.cats.indexOf(c.cat)<0)D.cats.push(c.cat)});
-  D.t=Object.assign({eligx:true,quiz:true,docs:true,hours:true,call:true,save:true,qrbtn:true,cardqr:true,dbr:true,trust:true,badge:true,dot:true},D.t);
+  D.t=Object.assign({track:true,book:true,scoreMsg:false,eligx:true,quiz:true,docs:true,hours:true,call:true,save:true,qrbtn:true,cardqr:true,dbr:true,trust:true,badge:true,dot:true},D.t);
   D.docs=D.docs||['Emirates ID','Passport copy','Latest salary certificate or payslip','Last 3 months bank statements'];
   D.stats=D.stats||[];D.quotes=D.quotes||[];D.hrs=D.hrs||{from:9,to:21};
 }
@@ -338,11 +405,27 @@ function lines(v){return v.split('\n').map(function(x){return x.trim()}).filter(
 function dubaiNow(){return new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Dubai'}))}
 function liveOffers(){
   var today=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Dubai'});
-  return D.offers.map(function(o){var p=o.split('|');return{t:p[0].trim(),d:(p[1]||'').trim()}}).filter(function(o){return o.t&&(!/^\d{4}-\d{2}-\d{2}$/.test(o.d)||o.d>=today)}).map(function(o){return o.t});
+  return D.offers.map(function(o){
+    var p=o.split('|'),ds=p.slice(1).map(function(x){return x.trim()}).filter(function(x){return /^\d{4}-\d{2}-\d{2}$/.test(x)});
+    return{t:p[0].trim(),st:ds.length>1?ds[0]:'',en:ds.length?ds[ds.length-1]:''};
+  }).filter(function(o){return o.t&&(!o.st||o.st<=today)&&(!o.en||o.en>=today)}).map(function(o){return o.t});
 }
-function logLead(type,name,mobile,details){
+var SRC='';try{SRC=(new URLSearchParams(location.search).get('src')||'').replace(/[^\w\-. ]/g,'').slice(0,30)}catch(e){}
+function srcLine(){return SRC?'\nSource: '+SRC:''}
+function track(key,extra){
+  if(!D.sheet||D.t.track===false||window.claude)return false;
+  try{if(localStorage.getItem('nt'))return false}catch(e){}
+  try{fetch(D.sheet,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({type:'event',details:key,name:extra||'',source:SRC,lang:lang}).toString()}).catch(function(){})}catch(e){return false}
+  return true;
+}
+function visitOnce(){
+  try{if(sessionStorage.getItem('v'))return;if(track('visit'))sessionStorage.setItem('v','1')}catch(e){track('visit')}
+}
+function logLead(type,name,mobile,details,score){
+  var base={type:type,name:name||'',mobile:mobile||'',details:details||'',source:SRC,score:score||'',time:new Date().toISOString()};
+  if(D.sheet){try{fetch(D.sheet,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(base).toString()}).catch(function(){})}catch(e){}}
   if(window.claude)return;
-  try{fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':'lead',type:type,name:name||'',mobile:mobile||'',details:details||''}).toString()}).catch(function(){})}catch(e){}
+  try{var f=Object.assign({'form-name':'lead'},base);fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(f).toString()}).catch(function(){})}catch(e){}
 }
 function homeTip(){toast(L('iPhone: tap Share, then Add to Home Screen. Android: tap the menu, then Add to Home screen.','آيفون: اضغط مشاركة ثم إضافة إلى الشاشة الرئيسية. أندرويد: اضغط القائمة ثم إضافة إلى الشاشة الرئيسية.'),7000)}
 function hrsSec(){
@@ -350,7 +433,7 @@ function hrsSec(){
   if(D.t.hours===false){el.innerHTML='';return}
   var h=D.hrs||{from:9,to:21},now=dubaiNow().getHours(),f=+h.from,t=+h.to,open=now>=f&&now<t;
   var pad=function(x){return(x%12||12)+(x<12||x===24?' AM':' PM')};
-  el.innerHTML='<div class="hint" style="margin:-6px 0 12px"><span style="color:'+(open?'var(--acc2)':'var(--mut)')+'">&#9679;</span> '+(open?L('Available now','متاح الآن'):L('Back at '+pad(f)+' (Dubai time)','أعود الساعة '+pad(f)+' (بتوقيت دبي)'))+'</div>';
+  el.innerHTML='<div class="hint" style="margin:-6px 0 12px"><span style="color:'+(open?'#22a55b':'var(--mut)')+'">&#9679;</span> '+(open?L('Available now','متاح الآن'):L('Back at '+pad(f)+' (Dubai time)','أعود الساعة '+pad(f)+' (بتوقيت دبي)'))+'</div>';
 }
 function trustSec(){
   if(D.t.trust===false){$('#trust').innerHTML='';return}
@@ -361,16 +444,21 @@ function trustSec(){
   if(qs.length)h+='<h2>'+L('What customers say','آراء العملاء')+'</h2>'+qs.map(function(x){return'<div class="item" style="flex-direction:column;align-items:flex-start;gap:4px"><span style="color:var(--ink)">&ldquo;'+esc(x[1])+'&rdquo;</span><span style="font-size:12px">'+esc(x[0])+'</span></div>'}).join('');
   $('#trust').innerHTML=h;
 }
-var docsOn={};
+var docsOn={},docsBank='';
+function docsList(){var b=D.bankDocs&&D.bankDocs[docsBank];return(b&&b.length)?b:(D.docs||[])}
+function docsPick(v){docsBank=v;docsOn={};docsSec()}
 function docsSec(){
   var el=$('#docs');
   if(D.t.docs===false||!(D.docs||[]).length){el.innerHTML='';return}
-  el.innerHTML='<h2>'+L('Documents checklist','قائمة المستندات')+'</h2><div class="box">'+D.docs.map(function(d,i){return'<label style="display:flex;gap:10px;align-items:center;color:var(--ink);font-size:15px;margin:6px 0"><input class="ck" type="checkbox"'+(docsOn[i]?' checked':'')+' onchange="docsOn['+i+']=this.checked"><span>'+esc(d)+'</span></label>'}).join('')+'<a class="btn p" style="display:block;margin-top:12px" href="#" target="_blank" rel="noopener" onclick="return docsSend(this)">'+L('Send on WhatsApp','أرسل عبر واتساب')+'</a></div>';
+  var bk=Object.keys(D.bankDocs||{}).filter(function(k){return D.bankDocs[k]&&D.bankDocs[k].length});
+  if(bk.indexOf(docsBank)<0)docsBank='';
+  var pick=bk.length?'<label>'+L('Which bank?','أي بنك؟')+'</label><select onchange="docsPick(this.value)"><option value="">'+L('General (all banks)','عام (كل البنوك)')+'</option>'+bk.map(function(k){return'<option'+(k===docsBank?' selected':'')+'>'+esc(k)+'</option>'}).join('')+'</select>':'';
+  el.innerHTML='<h2>'+L('Documents checklist','قائمة المستندات')+'</h2><div class="box">'+pick+docsList().map(function(d,i){return'<label style="display:flex;gap:10px;align-items:center;color:var(--ink);font-size:15px;margin:6px 0"><input class="ck" type="checkbox"'+(docsOn[i]?' checked':'')+' onchange="docsOn['+i+']=this.checked"><span>'+esc(d)+'</span></label>'}).join('')+'<a class="btn p" style="display:block;margin-top:12px" href="#" target="_blank" rel="noopener" onclick="return docsSend(this)">'+L('Send on WhatsApp','أرسل عبر واتساب')+'</a></div>';
 }
 function docsSend(a){
   var have=[],need=[];
-  D.docs.forEach(function(d,i){(docsOn[i]?have:need).push(d)});
-  var m='Hi '+D.name+', my documents checklist.\nI have: '+(have.join(', ')||'none yet')+'\nI still need: '+(need.join(', ')||'nothing');
+  docsList().forEach(function(d,i){(docsOn[i]?have:need).push(d)});
+  var m='Hi '+D.name+', my documents checklist.'+(docsBank?'\nBank: '+docsBank:'')+'\nI have: '+(have.join(', ')||'none yet')+'\nI still need: '+(need.join(', ')||'nothing')+srcLine();
   a.href='https://wa.me/'+waNum()+'?text='+encodeURIComponent(m);
   return true;
 }
@@ -400,13 +488,23 @@ function quizSec(){
     return{c:c,p:p}
   }).sort(function(a,b){return b.p-a.p}).slice(0,3);
   var l0=lang;lang='en';var QE=qzDef();lang=l0;
-  var msg='Hi '+D.name+', I used your card finder.\nSpending: '+QE[0].o[A[0]][0]+'\nSalary: '+QE[1].o[A[1]][0]+'\nFee: '+QE[2].o[A[2]][0]+'\nEmployment: '+QE[3].o[A[3]][0]+(rec.length?'\nTop matches: '+rec.map(function(x){return x.c.n}).join(', '):'');
+  var msg='Hi '+D.name+', I used your card finder.\nSpending: '+QE[0].o[A[0]][0]+'\nSalary: '+QE[1].o[A[1]][0]+'\nFee: '+QE[2].o[A[2]][0]+'\nEmployment: '+QE[3].o[A[3]][0]+(rec.length?'\nTop matches: '+rec.map(function(x){return x.c.n}).join(', '):'')+srcLine();
   if(!s.sent){s.sent=1;logLead('quiz','','',msg)}
   el.innerHTML='<h2>'+L('Card finder','باحث البطاقات')+'</h2><div class="box"><b>'+L('Your best matches','الأنسب لك')+'</b>'+(rec.length?rec.map(function(x){return'<div style="margin-top:8px"><b>'+esc(x.c.n)+'</b><br><span style="color:var(--mut);font-size:14px">'+esc(x.c.d)+(x.c.fee?' · '+esc(x.c.fee):'')+'</span></div>'}).join(''):'<div style="margin-top:8px">'+T('none')+'</div>')+'<a class="btn p" style="display:block;margin-top:12px" target="_blank" rel="noopener" href="https://wa.me/'+waNum()+'?text='+encodeURIComponent(msg)+'">'+T('cont')+'</a><button class="btn" style="width:100%;margin-top:8px" onclick="qzReset()">'+L('Start again','ابدأ من جديد')+'</button></div>';
 }
-function admExtra(){
+function bankDocsHtml(){
+  var h='<h2>Bank-specific documents</h2><label>Optional. If a bank needs different documents, write them here, one per line. Visitors can then pick that bank in the checklist. Leave a bank empty to use the general list.</label>';
+  D.banks.forEach(function(b,i){
+    h+='<label style="margin-top:8px">'+esc(b)+'</label><textarea rows="3" onchange="bankDocSet('+i+',this.value)">'+esc(((D.bankDocs||{})[b]||[]).join('\n'))+'</textarea>';
+  });
+  return h;
+}
+function bankDocSet(i,v){D.bankDocs=D.bankDocs||{};var b=D.banks[i],l=lines(v);if(l.length)D.bankDocs[b]=l;else delete D.bankDocs[b]}
+function admExtra(){return admExtra0()+bankDocsHtml()}
+function admExtra0(){
   var hr=D.hrs||{from:9,to:21};
   return '<h2>Chat avatar</h2><div style="width:64px;height:64px;margin:4px 0 8px">'+avHtml()+'</div><label>Upload your photo (it is cropped to a circle with a green ring and a verified tick)</label><input type="file" accept="image/*" onchange="avUp(this)"><button class="chip" onclick="D.avatar=\'\';admRender()">Use the silhouette</button>'
+   +'<h2>Leads to Google Sheet</h2><label>Paste your Google Apps Script web app link (optional)</label><input placeholder="https://script.google.com/macros/s/.../exec" value="'+esc(D.sheet||'')+'" onchange="D.sheet=this.value.trim()">'
    +'<h2>Business hours (Dubai time)</h2><label>Open from (hour, 0-23)</label><input type="number" min="0" max="23" value="'+esc(hr.from)+'" onchange="D.hrs=D.hrs||{};D.hrs.from=+this.value"><label>Open until (hour, 1-24)</label><input type="number" min="1" max="24" value="'+esc(hr.to)+'" onchange="D.hrs=D.hrs||{};D.hrs.to=+this.value">'
    +'<h2>Trust badges</h2><label>One per line: value | label (for example 5+ | Years of experience)</label><textarea rows="3" onchange="D.stats=lines(this.value)">'+esc((D.stats||[]).join('\n'))+'</textarea>'
    +'<h2>Testimonials</h2><label>One per line: Name | what the customer said (real, approved quotes only)</label><textarea rows="3" onchange="D.quotes=lines(this.value)">'+esc((D.quotes||[]).join('\n'))+'</textarea>'
@@ -445,6 +543,26 @@ function catAdd(){
   if(v&&D.cats.indexOf(v)<0)D.cats.push(v);
   admRender();
 }
+function hpad(x){return(x%12||12)+(x<12||x===24?' AM':' PM')}
+function bookDays(){var n=dubaiNow(),a=[];for(var i=0;i<7;i++)a.push(new Date(n.getFullYear(),n.getMonth(),n.getDate()+i));return a}
+function bookSec(){
+  var el=$('#book');
+  if(D.t.book===false){el.innerHTML='';return}
+  var h=D.hrs||{from:9,to:21},f=+h.from,t=+h.to,days=bookDays(),dn='',tm='';
+  days.forEach(function(d,i){dn+='<option value="'+i+'">'+(i===0?L('Today','اليوم'):i===1?L('Tomorrow','غداً'):d.toLocaleDateString(lang==='ar'?'ar-AE':'en-GB',{weekday:'long',day:'numeric',month:'short'}))+'</option>'});
+  for(var x=f;x<t;x++)tm+='<option value="'+x+'">'+hpad(x)+'</option>';
+  el.innerHTML='<h2>'+L('Book a call','احجز مكالمة')+'</h2><div class="box"><label>'+T('name')+'</label><input id="bn" autocomplete="name"><label>'+T('mob')+'</label><input id="bm" type="tel" autocomplete="tel"><label>'+L('Day','اليوم')+'</label><select id="bd">'+dn+'</select><label>'+L('Time (Dubai time)','الوقت (بتوقيت دبي)')+'</label><select id="bt">'+tm+'</select><div class="err" id="berr"></div><a class="btn p" href="#" target="_blank" rel="noopener" onclick="return bookSend(this)">'+L('Request a call on WhatsApp','اطلب مكالمة عبر واتساب')+'</a></div>';
+}
+function bookSend(a){
+  var n=$('#bn').value.trim(),p=$('#bm').value.trim();
+  if(!n||!p){$('#berr').textContent=T('need');return false}
+  $('#berr').textContent='';
+  var d=bookDays()[+$('#bd').value],when=d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})+' at '+hpad(+$('#bt').value)+' (Dubai time)';
+  var m='Hi '+D.name+', please call me on '+when+'.\nName: '+n+'\nMobile: '+p+srcLine();
+  logLead('callback',n,p,'Call requested: '+when);
+  a.href='https://wa.me/'+waNum()+'?text='+encodeURIComponent(m);
+  return true;
+}
 function qaMatch(q){
   q=q.toLowerCase();
   for(var i=0;i<D.qa.length;i++){
@@ -471,7 +589,7 @@ function qaHtml(){
   return h;
 }
 function setL(){lang=lang==='ar'?'en':'ar';try{localStorage.setItem('lg',lang)}catch(e){}shell()}
-async function saveC(){
+async function saveC(){track('save');
   var v='BEGIN:VCARD\nVERSION:3.0\nFN:'+D.name+'\nTITLE:'+D.title+'\nTEL;TYPE=CELL:'+D.phone+'\n'+(PU()?'URL:'+PU()+'\n':'')+'END:VCARD';
   try{
     var f=new File([v],D.name+'.vcf',{type:'text/vcard'});
@@ -479,11 +597,11 @@ async function saveC(){
   }catch(e){if(e&&e.name==='AbortError')return}
   try{await navigator.clipboard.writeText(D.name+' '+D.phone);toast(T('copied'))}catch(e){location.href='tel:'+D.phone}
 }
-async function shareP(){
+async function shareP(){track('share');
   if(navigator.share){try{await navigator.share(PU()?{title:D.name,url:PU()}:{title:D.name,text:D.name+' '+D.phone});return}catch(e){if(e&&e.name==='AbortError')return}}
   try{await navigator.clipboard.writeText(PU()||D.phone);toast(PU()?T('link'):T('copied'))}catch(e){}
 }
-function qr(){
+function qr(){track('qr');
   var w=$('#qrw');
   if(w.innerHTML){w.innerHTML='';return}
   w.innerHTML='<div id="qr"></div>';
@@ -497,7 +615,7 @@ function cardsSec(){
   var chips='<button class="chip'+(!filter?' on':'')+'" onclick="setF(-1)">'+T('all')+'</button>'+cats.map(function(c,i){return'<button class="chip'+(c===filter?' on':'')+'" onclick="setF('+i+')">'+esc(c)+'</button>'}).join('');
   var list=D.cards.map(function(c,i){return{c:c,i:i}}).filter(function(x){return!filter||x.c.cat===filter}).map(function(x){
     var c=x.c,msg=T('hi')+' '+D.name+', I am interested in the '+c.n+' card.';
-    return'<div class="item">'+(D.t.compare?'<input class="ck" type="checkbox" aria-label="'+T('cmp')+'"'+(sel.indexOf(x.i)>=0?' checked':'')+' onchange="pick('+x.i+',this.checked)">':'')+'<i class="th" style="background:'+tint(c.cat)+'"></i><div class="info"><b>'+esc(c.n)+'</b><span>'+esc(c.d)+'</span></div><a class="mini" target="_blank" rel="noopener" href="https://wa.me/'+waNum()+'?text='+encodeURIComponent(msg)+'">'+T('apply')+'</a></div>'}).join('');
+    return'<div class="item">'+(D.t.compare?'<input class="ck" type="checkbox" aria-label="'+T('cmp')+'"'+(sel.indexOf(x.i)>=0?' checked':'')+' onchange="pick('+x.i+',this.checked)">':'')+'<i class="th" style="background:'+tint(c.cat)+'"></i><div class="info"><b>'+esc(c.n)+'</b><span>'+esc(c.d)+'</span></div><a class="mini" onclick="track(\'apply\',D.cards['+x.i+'].n)" target="_blank" rel="noopener" href="https://wa.me/'+waNum()+'?text='+encodeURIComponent(msg)+'">'+T('apply')+'</a></div>'}).join('');
   el.innerHTML='<h2>'+T('cards')+'</h2><div class="chips">'+chips+'</div>'+list;
 }
 function setF(i){filter=i<0?'':cats[i];cardsSec()}
@@ -528,17 +646,35 @@ function banksSec(){
   $('#banks').innerHTML=D.t.banks?'<h2>'+T('banks')+'</h2><div class="bk">'+D.banks.map(function(b){return'<span>'+esc(b)+'</span>'}).join('')+'</div>':'';
 }
 function eligSec(){
-  $('#elig').innerHTML=D.t.elig?'<h2>'+T('find')+'</h2><label>'+T('name')+'</label><input id="en" autocomplete="name"><label>'+T('mob')+'</label><input id="ep" type="tel" autocomplete="tel"><label>'+T('sal')+'</label><select id="es">'+SAL.map(function(s,i){return'<option value="'+i+'">'+s[lang]+'</option>'}).join('')+'</select><label>'+T('emp')+'</label><select id="ee"><option value="0">'+T('sa')+'</option><option value="1">'+T('se')+'</option></select>'+(D.t.eligx!==false?xtraHtml():'')+'<div class="err" id="err"></div><button class="btn p" style="width:100%" onclick="chk()">'+T('chk')+'</button><div class="hint" style="text-align:start;margin:8px 0 0">'+L('By continuing you agree to be contacted about your request.','بالمتابعة فإنك توافق على التواصل معك بخصوص طلبك.')+'</div><div id="res"></div>':'';
+  $('#elig').innerHTML=D.t.elig?'<h2>'+T('find')+'</h2><label>'+T('name')+'</label><input id="en" autocomplete="name"><label>'+T('mob')+'</label><input id="ep" type="tel" autocomplete="tel"><label>'+T('sal')+'</label><input id="es" inputmode="numeric" oninput="dbrLive()" placeholder="'+L('For example 12,000','مثال 12,000')+'"><label>'+T('emp')+'</label><select id="ee"><option value="0">'+T('sa')+'</option><option value="1">'+T('se')+'</option></select>'+(D.t.eligx!==false?xtraHtml():'')+'<div class="err" id="err"></div><button class="btn p" style="width:100%" onclick="chk()">'+T('chk')+'</button><div class="hint" style="text-align:start;margin:8px 0 0">'+L('By continuing you agree to be contacted about your request.','بالمتابعة فإنك توافق على التواصل معك بخصوص طلبك.')+'</div><div id="res"></div>':'';
+}
+function dbrCalc(){
+  var sal=nz(xv('es')),lim=nz(xv('el')),emi=nz(xv('em')),liab=emi+lim*0.05;
+  return{s:sal,liab:liab,d:sal?liab/sal*100:0};
+}
+function capOf(c){return nz(c.dbrMax)||(+D.dbrMax||50)}
+function dbrLive(){
+  var el=$('#dbrm');if(!el)return;
+  var r=dbrCalc();
+  if(!r.s){el.innerHTML='';return}
+  var cap=+D.dbrMax||50,col=r.d<=cap*0.8?'#128C4A':(r.d<=cap?'#d98a00':'#c0392b'),w=Math.min(100,r.d);
+  el.innerHTML='<div class="hint" style="text-align:start;margin:2px 0 6px">'+L('Estimated DBR','نسبة الدين التقديرية')+': <b style="color:'+col+'">'+r.d.toFixed(1)+'%</b> ('+L('limit','الحد')+' '+cap+'%)</div><div style="position:relative;height:8px;border-radius:4px;background:var(--line);margin-bottom:12px"><div style="height:8px;width:'+w+'%;border-radius:4px;background:'+col+'"></div><div style="position:absolute;left:'+Math.min(100,cap)+'%;top:-3px;width:2px;height:14px;background:var(--ink)"></div></div>';
 }
 function chk(){
-  var n=$('#en').value.trim(),p=$('#ep').value.trim();
+  var n=$('#en').value.trim(),p=$('#ep').value.trim(),r=dbrCalc();
   if(!n||!p){$('#err').textContent=T('need');return}
+  if(!r.s){$('#err').textContent=L('Enter your monthly salary.','أدخل راتبك الشهري.');return}
   $('#err').textContent='';
-  var s=SAL[+$('#es').value],e=+$('#ee').value;
-  var rec=D.cards.filter(function(c){return!nz(c.min)||nz(c.min)<=s.v}).sort(function(a,b){return nz(b.cb)-nz(a.cb)});
-  var msg='Hi '+D.name+', please check my card eligibility.\nName: '+n+'\nMobile: '+p+'\nSalary: '+s.en+'\nEmployment: '+(e?'Self-employed':'Salaried')+xtraMsg()+(rec.length?'\nInterested in: '+rec.slice(0,2).map(function(c){return c.n}).join(', '):'');
-  logLead('eligibility',n,p,msg);
-  $('#res').innerHTML='<div class="box"><b>'+T('best')+'</b>'+(rec.length?rec.slice(0,3).map(function(c){return'<div style="margin-top:6px">'+esc(c.n)+' <span style="color:var(--mut)">· '+esc(c.d)+'</span></div>'}).join(''):'<div style="margin-top:6px">'+T('none')+'</div>')+'<a class="btn p" style="display:block;margin-top:12px" target="_blank" rel="noopener" href="https://wa.me/'+waNum()+'?text='+encodeURIComponent(msg)+'">'+T('cont')+'</a></div>';
+  var e=+$('#ee').value,cap=+D.dbrMax||50;
+  var ok=D.cards.filter(function(c){return(!nz(c.min)||nz(c.min)<=r.s)&&r.d<=capOf(c)}).sort(function(a,b){return nz(b.cb)-nz(a.cb)});
+  var score=ok.length?(r.d<=cap*0.8?'HOT':'WARM'):'LOW';
+  var banks=[];ok.forEach(function(c){var b=(c.bank||'').trim();if(b&&banks.indexOf(b)<0)banks.push(b)});
+  var msg='Hi '+D.name+', please check my card eligibility.\nName: '+n+'\nMobile: '+p+'\nSalary: AED '+r.s.toLocaleString('en')+'\nEmployment: '+(e?'Self-employed':'Salaried')+xtraMsg()+'\nEstimated DBR: '+r.d.toFixed(1)+'%'+(banks.length?'\nLikely banks: '+banks.join(', '):'')+(ok.length?'\nInterested in: '+ok.slice(0,2).map(function(c){return c.n}).join(', '):'')+(D.t.scoreMsg===true?'\nLead score: '+score:'')+srcLine();
+  logLead('eligibility',n,p,msg,score);
+  var g={},order=[];
+  ok.forEach(function(c){var b=(c.bank||'').trim()||L('Other cards','بطاقات أخرى');if(!g[b]){g[b]=[];order.push(b)}g[b].push(c.n)});
+  var list=order.map(function(b){return'<div style="margin-top:8px"><b>'+esc(b)+'</b><br><span style="color:var(--mut);font-size:14px">'+esc(g[b].join(', '))+'</span></div>'}).join('');
+  $('#res').innerHTML='<div class="box"><b>'+L('Likely to qualify','المرجح قبولك')+'</b>'+(ok.length?list:'<div style="margin-top:8px">'+T('none')+'</div>')+'<div class="hint" style="text-align:start;margin:10px 0 0">'+L('Estimated DBR','نسبة الدين التقديرية')+' '+r.d.toFixed(1)+'%. '+L('This is an estimate. Each bank decides.','هذا تقدير فقط. القرار النهائي للبنك.')+'</div><a class="btn p" style="display:block;margin-top:12px" target="_blank" rel="noopener" href="https://wa.me/'+waNum()+'?text='+encodeURIComponent(msg)+'">'+T('cont')+'</a></div>';
 }
 function ownBtn(){$('#own').innerHTML=''}
 
@@ -551,10 +687,10 @@ function showPop(){
   },Math.max(0,+D.delay||0)*1000);
 }
 
-function openAdm(){admRender();$('#adm').className='open'}
+function openAdm(){try{localStorage.setItem('nt','1')}catch(e){}admRender();$('#adm').className='open'}
 function closeAdm(){$('#adm').className='';sel=[];shell();showPop()}
 function admRender(){
-  var TG=[['Page sections',{cards:'Cards list',banks:'Banks I work with',elig:'Eligibility check form',eligx:'Extra details in the form (company, existing card, limit, EMI)',quiz:'Card finder quiz',compare:'Card comparison',calc:'Cashback calculator',docs:'Document checklist',refer:'Refer a friend',offers:'Offers banner',hours:'Business hours indicator',trust:'Trust badges and testimonials'}],['Buttons and tools',{call:'Call button',wa:'WhatsApp button',save:'Save contact button',share:'Share button',qrbtn:'QR code button',cardqr:'QR code on the card',ar:'Arabic / English switch',theme:'Light / dark switch',popup:'Contact number popup'}],['Chat assistant',{chat:'Chat assistant (on or off)',dbr:'DBR check in the chat',badge:'Verified tick on the avatar',dot:'Online status dot'}]];
+  var TG=[['Page sections',{cards:'Cards list',banks:'Banks I work with',elig:'Eligibility check form',eligx:'Extra details in the form (company, existing card, limit, EMI)',quiz:'Card finder quiz',compare:'Card comparison',calc:'Cashback calculator',docs:'Document checklist',book:'Book a call',track:'Count visits and taps (needs the Google Sheet link)',scoreMsg:'Show lead score (HOT, WARM, LOW) in the WhatsApp message',refer:'Refer a friend',offers:'Offers banner',hours:'Business hours indicator',trust:'Trust badges and testimonials'}],['Buttons and tools',{call:'Call button',wa:'WhatsApp button',save:'Save contact button',share:'Share button',qrbtn:'QR code button',cardqr:'QR code on the card',ar:'Arabic / English switch',theme:'Light / dark switch',popup:'Contact number popup'}],['Chat assistant',{chat:'Chat assistant (on or off)',dbr:'DBR check in the chat',badge:'Verified tick on the avatar',dot:'Online status dot'}]];
   var h='<div class="wrap"><h2>Admin panel</h2>';
   [['name','Name'],['title','Title'],['tag','Tagline'],['phone','Phone'],['wa','WhatsApp number'],['url','Page link (used for Share and QR)']].forEach(function(f){
     h+='<label>'+f[1]+'</label><input value="'+esc(D[f[0]])+'" onchange="D.'+f[0]+'=this.value">';
@@ -568,9 +704,9 @@ function admRender(){
   });
   h+='<label>Admin password (for the hidden theme-button entry)</label><input value="'+esc(D.pw||'111')+'" onchange="D.pw=this.value">';
   h+='<label>DBR limit % used by the chat calculator</label><input type="number" value="'+esc(+D.dbrMax||50)+'" onchange="D.dbrMax=+this.value">';
-  h+='<label>Refer a friend message (the page link is added automatically)</label><textarea rows="3" onchange="D.refMsg=this.value">'+esc(D.refMsg)+'</textarea>'+admExtra()+'<h2>Offers banner</h2><label>One offer per line. Optional end date: Offer text | 2026-12-31</label><textarea rows="3" onchange="D.offers=this.value.split(\'\\n\').map(function(s){return s.trim()}).filter(Boolean)">'+esc(D.offers.join('\n'))+'</textarea>'+catHtml()+qaHtml()+'<h2>Cards</h2>';
+  h+='<label>Refer a friend message (the page link is added automatically)</label><textarea rows="3" onchange="D.refMsg=this.value">'+esc(D.refMsg)+'</textarea>'+admExtra()+'<h2>Offers banner</h2><label>One offer per line. Optional dates (YYYY-MM-DD): Offer text | end date, or Offer text | start date | end date</label><textarea rows="3" onchange="D.offers=this.value.split(\'\\n\').map(function(s){return s.trim()}).filter(Boolean)">'+esc(D.offers.join('\n'))+'</textarea>'+catHtml()+qaHtml()+'<h2>Cards</h2>';
   D.cards.forEach(function(c,i){
-    h+='<div class="crow"><input placeholder="Name" value="'+esc(c.n)+'" onchange="D.cards['+i+'].n=this.value"><select onchange="D.cards['+i+'].cat=this.value">'+catOpts(c.cat)+'</select><input placeholder="Description" value="'+esc(c.d)+'" onchange="D.cards['+i+'].d=this.value"><input placeholder="Annual fee" value="'+esc(c.fee||'')+'" onchange="D.cards['+i+'].fee=this.value"><input placeholder="Cashback (e.g. 5% or 5% on groceries)" value="'+esc(c.cb||'')+'" onchange="D.cards['+i+'].cb=this.value"><input placeholder="Min. salary (e.g. 5,000 or AED 5,000+)" value="'+esc(c.min||'')+'" onchange="D.cards['+i+'].min=this.value"><button class="chip" onclick="D.cards.splice('+i+',1);admRender()">Remove</button></div>';
+    h+='<div class="crow"><input placeholder="Name" value="'+esc(c.n)+'" onchange="D.cards['+i+'].n=this.value"><select onchange="D.cards['+i+'].cat=this.value">'+catOpts(c.cat)+'</select><input placeholder="Bank (for example ADCB)" value="'+esc(c.bank||'')+'" onchange="D.cards['+i+'].bank=this.value"><input placeholder="DBR limit % for this card (optional, default '+esc(+D.dbrMax||50)+')" value="'+esc(c.dbrMax||'')+'" onchange="D.cards['+i+'].dbrMax=this.value"><input placeholder="Description" value="'+esc(c.d)+'" onchange="D.cards['+i+'].d=this.value"><input placeholder="Annual fee" value="'+esc(c.fee||'')+'" onchange="D.cards['+i+'].fee=this.value"><input placeholder="Cashback (e.g. 5% or 5% on groceries)" value="'+esc(c.cb||'')+'" onchange="D.cards['+i+'].cb=this.value"><input placeholder="Min. salary (e.g. 5,000 or AED 5,000+)" value="'+esc(c.min||'')+'" onchange="D.cards['+i+'].min=this.value"><button class="chip" onclick="D.cards.splice('+i+',1);admRender()">Remove</button></div>';
   });
   h+='<button class="chip" onclick="D.cards.push({n:\'New card\',cat:(D.cats[0]||\'General\'),d:\'\',fee:\'\',cb:\'\',min:\'\'});admRender()">Add card</button>';
   h+='<h2>Banks</h2><label>Separate with commas</label><textarea rows="3" onchange="D.banks=this.value.split(\',\').map(function(s){return s.trim()}).filter(Boolean)">'+esc(D.banks.join(', '))+'</textarea>';
@@ -597,6 +733,7 @@ if(D.t.theme){try{document.documentElement.setAttribute('data-theme',localStorag
 shell();showPop();
 ghLoad();
 if(location.hash==='#admin')pwAsk();
+visitOnce();
 window.addEventListener('hashchange',function(){if(location.hash==='#admin')pwAsk()});
 (async function(){
   try{
