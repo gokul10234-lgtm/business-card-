@@ -5,11 +5,23 @@
  "phone": "+971527074559",
  "wa": "+971527074559",
  "url": "",
- "delay": 8,
+ "delay": 15,
  "t": {
+  "eligx": true,
+  "quiz": true,
+  "docs": false,
+  "hours": true,
+  "call": true,
+  "save": true,
+  "qrbtn": true,
+  "cardqr": true,
+  "dbr": true,
+  "trust": true,
+  "badge": true,
+  "dot": true,
   "offers": true,
   "compare": true,
-  "calc": true,
+  "calc": false,
   "share": true,
   "ar": true,
   "refer": true,
@@ -62,5 +74,42 @@
  "banks": [
   "CBD"
  ],
- "refMsg": "Hi! I found a great credit card advisor, Gokul. Check your eligibility and offers here:"
+ "refMsg": "Hi! I found a great credit card advisor, Gokul. Check your eligibility and offers here:",
+ "qa": [
+  {
+   "q": "Documents needed",
+   "qa": "المستندات المطلوبة",
+   "k": "doc,paper,emirates id,passport,statement,مستند,وثائق,اوراق,أوراق",
+   "a": "Usually: Emirates ID, passport, latest salary certificate or payslip, and 3 months of bank statements. Requirements vary by bank.",
+   "aa": "عادةً: الهوية الإماراتية، جواز السفر، شهادة الراتب أو قسيمة الراتب، وكشف حساب لثلاثة أشهر. تختلف المتطلبات حسب البنك."
+  },
+  {
+   "q": "How to apply",
+   "qa": "كيف أقدّم",
+   "k": "apply,how to apply,get started,تقدم,قدم,كيف أقدم",
+   "a": "Use \"Find my best card\" on this page, or message me on WhatsApp and I will guide you step by step.",
+   "aa": "استخدم \"اعثر على أفضل بطاقة\" في هذه الصفحة، أو راسلني عبر واتساب وسأرشدك خطوة بخطوة."
+  }
+ ],
+ "cats": [
+  "Complimentary rounds of golf",
+  "Cashback",
+  " rewards",
+  "Fual",
+  "Movie"
+ ],
+ "docs": [
+  "Emirates ID",
+  "Passport copy",
+  "Latest salary certificate or payslip",
+  "Last 3 months bank statements"
+ ],
+ "stats": [],
+ "quotes": [],
+ "hrs": {
+  "from": 9,
+  "to": 21
+ },
+ "pw": "1186",
+ "avatar": ""
 }
